@@ -1,16 +1,7 @@
-/********************* LAUNCHER ***********************/
-
-//let dialogMode = DialogCodingame(showAllInputs:false)
-public let MODE = Game.Episode2
-//main(dialog: dialogMode)
-
-
-/*********************** CODE *************************/
-import Foundation
-
+/********************* HEADER ****************/
 #if canImport(CodingameCommon)
-import Darwin
 import CodingameCommon
+import Darwin
 #else
 import Glibc
 public struct StderrOutputStream: TextOutputStream {
@@ -18,89 +9,37 @@ public struct StderrOutputStream: TextOutputStream {
 }
 public var errStream = StderrOutputStream()
 
+public let defaultTerminator = "\n",defaultSeparator = " "
 
-/************************************ IDialog implementation **************************************/
+//public func print(_ args:Any..., separator:String = defaultSeparator, terminator:String = defaultTerminator) -> Void {
+//    let output = args.map{"\($0)"}.joined(separator: separator)
+//    Dialog.allOutputs.append(output)
+//    Swift.print(output,terminator: terminator)
+//    debug("-- all inputs --\n", Dialog.allInputs.joined(separator: "\n"), "\n------------")
+//    debug("-- all outputs --\n", Dialog.allOutputs.joined(separator: "\n"), "\n------------")
+//}
 
-public protocol IDialog {
-    func writeArray(_ arg:[Any], separator:String, terminator:String) -> Void
-    func debugArray(_ arg:[Any], separator:String, terminator:String) -> Void
-    func read() -> String?
-    func read(_ :String) -> String?
+public func debug(_ args:Any..., separator:String = defaultSeparator, terminator:String = defaultTerminator) {
+    let output = args.map{"\($0)"}.joined(separator: separator)
+    Swift.print(output, terminator: terminator, to: &errStream)
 }
 
-public extension IDialog {
-    private var defaultTerminator : String { get { "\n"} }
-    private var defaultSeparator : String { get { " "} }
-    func write(_ args:Any...) -> Void {
-        writeArray(args, separator: defaultSeparator, terminator: defaultTerminator)
-    }
-    func write(_ args:Any..., terminator:String) -> Void {
-        writeArray(args, separator: defaultSeparator, terminator: terminator)
-    }
-    func write(_ args:Any..., separator:String) -> Void {
-        writeArray(args, separator:separator, terminator: defaultTerminator)
-    }
-    func write(_ args:Any..., separator:String, terminator:String) -> Void {
-        writeArray(args, separator:separator, terminator: terminator)
-    }
-    func debug(_ args:Any...) -> Void {
-        debugArray(args, separator: defaultSeparator, terminator: defaultTerminator)
-    }
-    func debug(_ args:Any..., terminator:String) -> Void {
-        debugArray(args, separator: defaultSeparator, terminator: terminator)
-    }
-    func debug(_ args:Any..., separator:String) -> Void {
-        debugArray(args, separator:separator, terminator: defaultTerminator)
-    }
-    func debug(_ args:Any..., separator:String, terminator:String) {
-        debugArray(args, separator:separator, terminator: terminator)
-    }
+struct Dialog {
+    static var allInputs : [String] = []
+    static var allOutputs : [String] = []
 }
-
-public class DialogCodingame : IDialog {
-    public var allInputs = ""
-    private let showAllInputs:Bool
-    public init(showAllInputs:Bool = false) {
-        self.showAllInputs = showAllInputs
-    }
-    
-    public func showAllInputsOnDebug() {
-        debug("----------- All inputs ------------")
-        debug(allInputs,terminator:"")
-        debug("-----------------------------------")
-    }
-    
-    public func writeArray(_ arg:[Any], separator: String, terminator: String) {
-        let output = arg.map{"\($0)"}.joined(separator: separator)
-        print(output, terminator: terminator)
-    }
-    public func debugArray(_ arg:[Any], separator:String, terminator:String) {
-        let output = arg.map{"\($0)"}.joined(separator: separator)
-        print(output, terminator: terminator, to: &errStream)
-    }
-    public func read(_ message:String) -> String? {
-        return read()
-    }
-    public func read() -> String? {
-        let r = readLine()
-        allInputs += r! + "\n"
-        if self.showAllInputs {
-            showAllInputsOnDebug()
-        }
-        return r
-    }
+public func readLine(_ message:String) -> String? {
+    let r = readLine()
+    if let r = r { Dialog.allInputs.append(r) }
+    return r
 }
-
-/************************************ IDialog implementation **************************************/
-
 #endif
-
+import Foundation
+/********************* END of HEADER ****************/
 
 public enum Game {
     case Episode1, Episode2
 }
-
-
 
 public class Node : Hashable {
     let index : Int
@@ -201,8 +140,8 @@ public func searchSegmentToCut(map:Map, bobnetNode:Node) -> Segment? {
 }
 
 
-public func main(dialog:IDialog) {
-    let inputs = (dialog.read("N (num nodes) L (num links) E (num gateways)")!).split(separator: " ").map(String.init)
+public func main() {
+    let inputs = (readLine("N (num nodes) L (num links) E (num gateways)")!).split(separator: " ").map(String.init)
     let N = Int(inputs[0])! // the total number of nodes in the level, including the gateways
     let L = Int(inputs[1])! // the number of links
     let E = Int(inputs[2])! // the number of exit gateways
@@ -214,7 +153,7 @@ public func main(dialog:IDialog) {
     
     if L > 0 {
         for _ in 0...(L-1) {
-            let inputs = (dialog.read("Link (N1 N2)")!).split(separator: " ").map(String.init)
+            let inputs = (readLine("Link (N1 N2)")!).split(separator: " ").map(String.init)
             let N1 = Int(inputs[0])! // N1 and N2 defines a link between these nodes
             let N2 = Int(inputs[1])!
             let nodeLow = N1 < N2 ? mainMap[N1]! : mainMap[N2]!
@@ -229,7 +168,7 @@ public func main(dialog:IDialog) {
     var gatewaySegments = Set<Segment>()
     if E > 0 {
         for _ in 0...(E-1) {
-            let EI = Int(dialog.read("Gateway (Node)")!)! // the index of a gateway node
+            let EI = Int(readLine("Gateway (Node)")!)! // the index of a gateway node
             let node = mainMap[EI]!
             node.isGateway = true
             gateways.insert(node)
@@ -242,7 +181,7 @@ public func main(dialog:IDialog) {
     
     // game loop
     while true {
-        guard let r = dialog.read("Bobnet position (Node)") else {
+        guard let r = readLine("Bobnet position (Node)") else {
             return
         }
         let SI = Int(r)! // The index of the node on which the Bobnet agent is positioned this turn
@@ -262,12 +201,14 @@ public func main(dialog:IDialog) {
             segmentToCut.node1.links.removeValue(forKey:segmentToCut.node2)
             segmentToCut.node2.links.removeValue(forKey:segmentToCut.node1)
             gatewaySegments.remove(segmentToCut)
-            dialog.write(segmentToCut.nodesIndexesString)
+            print(segmentToCut.nodesIndexesString)
         }
         else {
-            dialog.write("")
+            print("")
         }
     }
     
 }
 
+public let MODE = Game.Episode2
+//main()

@@ -1,140 +1,76 @@
-
-/************************************ IDialog implementation **************************************/
-
-public protocol IDialog {
-    func writeArray(_ arg:[Any], separator:String, terminator:String) -> Void
-    func debugArray(_ arg:[Any], separator:String, terminator:String) -> Void
-    func read() -> String?
-    func read(_ :String) -> String?
-}
-
-public extension IDialog {
-    private var defaultTerminator : String { get { "\n"} }
-    private var defaultSeparator : String { get { " "} }
-    func write(_ args:Any...) -> Void {
-        writeArray(args, separator: defaultSeparator, terminator: defaultTerminator)
-    }
-    func write(_ args:Any..., terminator:String) -> Void {
-        writeArray(args, separator: defaultSeparator, terminator: terminator)
-    }
-    func write(_ args:Any..., separator:String) -> Void {
-        writeArray(args, separator:separator, terminator: defaultTerminator)
-    }
-    func write(_ args:Any..., separator:String, terminator:String) -> Void {
-        writeArray(args, separator:separator, terminator: terminator)
-    }
-    func debug(_ args:Any...) -> Void {
-        debugArray(args, separator: defaultSeparator, terminator: defaultTerminator)
-    }
-    func debug(_ args:Any..., terminator:String) -> Void {
-        debugArray(args, separator: defaultSeparator, terminator: terminator)
-    }
-    func debug(_ args:Any..., separator:String) -> Void {
-        debugArray(args, separator:separator, terminator: defaultTerminator)
-    }
-    func debug(_ args:Any..., separator:String, terminator:String) {
-        debugArray(args, separator:separator, terminator: terminator)
-    }
-}
-
-public class DialogCodingame : IDialog {
-    public var allInputs = ""
-    private let showAllInputs:Bool
-    public init(showAllInputs:Bool = false) {
-        self.showAllInputs = showAllInputs
-    }
-    
-    public func showAllInputsOnDebug() {
-        debug("----------- All inputs ------------")
-        debug(allInputs,terminator:"")
-        debug("-----------------------------------")
-    }
-    
-    public func writeArray(_ arg:[Any], separator: String, terminator: String) {
-        let output = arg.map{"\($0)"}.joined(separator: separator)
-        print(output, terminator: terminator)
-    }
-    public func debugArray(_ arg:[Any], separator:String, terminator:String) {
-        let output = arg.map{"\($0)"}.joined(separator: separator)
-        print(output, terminator: terminator, to: &errStream)
-    }
-    public func read(_ message:String) -> String? {
-        return read()
-    }
-    public func read() -> String? {
-        let r = readLine()
-        allInputs += r! + "\n"
-        if self.showAllInputs {
-            showAllInputsOnDebug()
-        }
-        return r
-    }
-}
-
-/************************************ IDialog implementation **************************************/
-
+import Foundation
 extension FileHandle: TextOutputStream {
   public func write(_ string: String) { self.write(Data(string.utf8)) }
 }
 public var errStream = FileHandle.standardError
 
+public var defaultTerminator : String = "\n"
+public var defaultSeparator : String = " "
 
-public class DialogInteractive : IDialog {
-    public init() { }
-    
-    public func writeArray(_ arg: [Any], separator: String, terminator: String) {
-        let output = arg.map{"\($0)"}.joined(separator: separator)
-        print(output, terminator: terminator)
-    }
-    public func debugArray(_ arg:[Any], separator:String, terminator:String) {
-        let output = arg.map{"\($0)"}.joined(separator: separator)
-        print("***",output, terminator: terminator, to: &errStream)
-    }
-    public func read(_ message:String) -> String? {
-        write(message, ": ", terminator : "")
-        return read()
-    }
-    public func read() -> String? {
-        return readLine()
-    }
+public func print(_ args:Any..., separator:String = defaultSeparator, terminator:String = defaultTerminator) -> Void {
+    let output = args.map{"\($0)"}.joined(separator: separator)
+    Swift.print(output,terminator: terminator)
 }
 
 
+public func debug(_ args:Any..., separator:String = defaultSeparator, terminator:String = defaultTerminator) {
+    let output = args.map{"\($0)"}.joined(separator: separator)
+    Swift.print("***",output, terminator: terminator, to: &errStream)
+}
 
-public class DialogTestFile : IDialog {
-//    let testName:String
-    let testInputContent:[Substring]
-    var testOutputContent:[String] = []
-    var currentLine = 0
+
+public class GameData {
+    let dataInputContent:[String]
+    var dataOutputContent:[String] = []
+    private var currentDataInputLine = 0
     
-    public init(inputTestFile:URL) {
-        let fileData = try! String(contentsOf: inputTestFile)
-        testInputContent = fileData.split { $0.isNewline }
+    public init(inputDataFile:URL) {
+        let fileData = try! String(contentsOf: inputDataFile)
+        dataInputContent = fileData.split { $0.isNewline } .map( String.init )
     }
     
-    public func writeArray(_ arg: [Any], separator: String, terminator: String) {
-        let output = arg.map{"\($0)"}.joined(separator: separator)
-        testOutputContent.append(output)
-        print(output, terminator: terminator)
-    }
-    public func debugArray(_ arg:[Any], separator:String, terminator:String) {
-        let output = arg.map{"\($0)"}.joined(separator: separator)
-        print("***",output, terminator: terminator, to: &errStream)
-    }
-    public func read(_ message:String) -> String? {
-        write(message, ": ", terminator : "")
-        return read()
-    }
-    public func read() -> String? {
-        if testInputContent.count > currentLine {
-            let r = testInputContent[currentLine]
-            currentLine += 1
-            write(currentLine)
-            return String(r)
+    public func readLineOfInputData() -> String? {
+        if dataInputContent.count > currentDataInputLine {
+            let r = dataInputContent[currentDataInputLine]
+            currentDataInputLine += 1
+            return r
         }
         else {
-            write("*** end ***")
             return nil
         }
     }
+}
+
+public enum DialogMode {
+    case Interactive
+    case Scenario(gameData:GameData)
+}
+public struct Dialog {
+    public static var allInputs : [String] = []
+    public static var mode : DialogMode = .Interactive
+}
+
+
+public func readLine(_ message:String) -> String? {
+    print(message, ": ", terminator : "")
+    var r : String?
+    if case .Scenario(let gameData) = Dialog.mode {
+        r = gameData.readLineOfInputData()
+    }
+    else { // Interactive mode
+        r = readLine()
+    }
+    
+    if let ur = r, ur == "" {
+        r = nil
+    }
+    
+    if let r = r {
+        Dialog.allInputs.append(r)
+    }
+    
+    if case .Scenario(_) = Dialog.mode {
+        print(r ?? "\n\t---- end of scenario ----\n")
+    }
+    return r
 }
