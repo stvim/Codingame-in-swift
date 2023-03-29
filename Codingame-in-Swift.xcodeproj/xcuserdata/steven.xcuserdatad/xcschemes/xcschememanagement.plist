@@ -33,12 +33,12 @@
 		<key>DeathFirstSearch.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Foobar.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Global.xcscheme_^#shared#^_</key>
 		<dict>
@@ -89,6 +89,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>The Resistance.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>playground inside (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -134,6 +139,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>B023471729D4239E00BE94DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B023471E29D4239F00BE94DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B0AE038729C8A5D3001136B1</key>
 		<dict>
 			<key>primary</key>

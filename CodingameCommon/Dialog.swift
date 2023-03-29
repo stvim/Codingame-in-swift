@@ -50,7 +50,9 @@ public struct Dialog {
     public static var mode : DialogMode = .Interactive
 }
 
-
+public func readLine() -> String? {
+    return readLine("")
+}
 public func readLine(_ message:String) -> String? {
     print(message, ": ", terminator : "")
     var r : String?

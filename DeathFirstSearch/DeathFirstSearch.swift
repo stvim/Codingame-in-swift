@@ -28,8 +28,11 @@ struct Dialog {
     static var allInputs : [String] = []
     static var allOutputs : [String] = []
 }
+public func readLine() -> String? {
+    return readLine("")
+}
 public func readLine(_ message:String) -> String? {
-    let r = readLine()
+    let r = Swift.readLine()
     if let r = r { Dialog.allInputs.append(r) }
     return r
 }
