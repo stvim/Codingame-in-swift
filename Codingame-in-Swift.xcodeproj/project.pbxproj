@@ -13,7 +13,6 @@
 		B023472E29D423F700BE94DC /* TheResistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023472D29D423F700BE94DC /* TheResistance.swift */; };
 		B023473029D4258D00BE94DC /* test1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B023472F29D4258D00BE94DC /* test1.txt */; };
 		B029B17929CF271C0007C69A /* Tests Explore Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE042929CCBA51001136B1 /* Tests Explore Bundle.swift */; };
-		B029B17A29CF27640007C69A /* DeathFirstSearch test wrong directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE044229CDB44B001136B1 /* DeathFirstSearch test wrong directory.swift */; };
 		B0AE03CA29C9C87B001136B1 /* CodingameCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE03C929C9C87B001136B1 /* CodingameCommonTests.swift */; };
 		B0AE03DD29C9D96C001136B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE03DC29C9D96C001136B1 /* main.swift */; };
 		B0AE040B29CCAD8C001136B1 /* DeathFirstSearch.docc in Sources */ = {isa = PBXBuildFile; fileRef = B0AE040A29CCAD8C001136B1 /* DeathFirstSearch.docc */; };
@@ -117,6 +116,7 @@
 		B023472429D4239F00BE94DC /* The_ResistanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_ResistanceTests.swift; sourceTree = "<group>"; };
 		B023472D29D423F700BE94DC /* TheResistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheResistance.swift; sourceTree = "<group>"; };
 		B023472F29D4258D00BE94DC /* test1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test1.txt; sourceTree = "<group>"; };
+		B027E1E429D4E6DF0066E752 /* Algorithm.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Algorithm.md; sourceTree = "<group>"; };
 		B0AE039D29C8B895001136B1 /* test1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = test1.txt; sourceTree = "<group>"; };
 		B0AE039E29C8BE62001136B1 /* test1_result.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test1_result.txt; sourceTree = "<group>"; };
 		B0AE03BD29C9C87A001136B1 /* CodingameCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodingameCommon.h; sourceTree = "<group>"; };
@@ -224,6 +224,7 @@
 			children = (
 				B023471A29D4239F00BE94DC /* The_Resistance.h */,
 				B023472D29D423F700BE94DC /* TheResistance.swift */,
+				B027E1E429D4E6DF0066E752 /* Algorithm.md */,
 			);
 			path = "The Resistance";
 			sourceTree = "<group>";
@@ -235,6 +236,15 @@
 				B023472F29D4258D00BE94DC /* test1.txt */,
 			);
 			path = "The ResistanceTests";
+			sourceTree = "<group>";
+		};
+		B027E1E529D567690066E752 /* Puzzle Hard */ = {
+			isa = PBXGroup;
+			children = (
+				B0AE040829CCAD8C001136B1 /* DeathFirstSearch */,
+				B0AE041429CCAD8D001136B1 /* DeathFirstSearchTests */,
+			);
+			path = "Puzzle Hard";
 			sourceTree = "<group>";
 		};
 		B0AE03BC29C9C87A001136B1 /* CodingameCommon */ = {
@@ -289,13 +299,12 @@
 		B0B12F1729C3167000F807CF = {
 			isa = PBXGroup;
 			children = (
+				B027E1E529D567690066E752 /* Puzzle Hard */,
 				B023471229D4235100BE94DC /* Puzzle Very Hard */,
 				B023470E29D38AE300BE94DC /* Unclassified */,
 				B0AE03BC29C9C87A001136B1 /* CodingameCommon */,
 				B0AE03C829C9C87B001136B1 /* CodingameCommonTests */,
 				B0AE03DB29C9D96C001136B1 /* Foobar */,
-				B0AE040829CCAD8C001136B1 /* DeathFirstSearch */,
-				B0AE041429CCAD8D001136B1 /* DeathFirstSearchTests */,
 				B0B12F2129C3167100F807CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -649,7 +658,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B029B17A29CF27640007C69A /* DeathFirstSearch test wrong directory.swift in Sources */,
 				B0AE041629CCAD8D001136B1 /* DeathFirstSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

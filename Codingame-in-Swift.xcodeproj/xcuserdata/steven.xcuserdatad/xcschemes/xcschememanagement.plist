@@ -30,11 +30,6 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>DeathFirstSearch.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>Foobar.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -89,7 +84,12 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>The Resistance.xcscheme_^#shared#^_</key>
+		<key>Puzzle DeathFirstSearch.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Puzzle TheResistance.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
