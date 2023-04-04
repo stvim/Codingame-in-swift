@@ -40,43 +40,34 @@ public func readLine(_ message:String) -> String? {
 import Foundation
 /********************* END of HEADER ****************/
 
-/*
 let morseAlphabet = [
-    "A": "01", "B": "1000", "C": "1010", "D": "100", "E": "0",
-    "F": "0010", "G": "110", "H": "0000", "I": "00", "J": "0111",
-    "K": "101", "L": "0100", "M": "11", "N": "10", "O": "111",
-    "P": "0110", "Q": "1101", "R": "010", "S": "000", "T": "1",
-    "U": "001", "V": "0001", "W": "011", "X": "1001", "Y": "1011", "Z": "1100"
+    "A": [false, true],
+    "B": [true, false, false, false],
+    "C": [true, false, true, false],
+    "D": [true, false, false],
+    "E": [false],
+    "F": [false, false, true, false],
+    "G": [true, true, false],
+    "H": [false, false, false, false],
+    "I": [false, false],
+    "J": [false, true, true, true],
+    "K": [true, false, true],
+    "L": [false, true, false, false],
+    "M": [true, true],
+    "N": [true, false],
+    "O": [true, true, true],
+    "P": [false, true, true, false],
+    "Q": [true, true, false, true],
+    "R": [false, true, false],
+    "S": [false, false, false],
+    "T": [true],
+    "U": [false, false, true],
+    "V": [false, false, false, true],
+    "W": [false, true, true],
+    "X": [true, false, false, true],
+    "Y": [true, false, true, true],
+    "Z": [true, true, false, false]
 ]
-*/
-   let morseAlphabet = [
-        "A": [false, true],
-        "B": [true, false, false, false],
-        "C": [true, false, true, false],
-        "D": [true, false, false],
-        "E": [false],
-        "F": [false, false, true, false],
-        "G": [true, true, false],
-        "H": [false, false, false, false],
-        "I": [false, false],
-        "J": [false, true, true, true],
-        "K": [true, false, true],
-        "L": [false, true, false, false],
-        "M": [true, true],
-        "N": [true, false],
-        "O": [true, true, true],
-        "P": [false, true, true, false],
-        "Q": [true, true, false, true],
-        "R": [false, true, false],
-        "S": [false, false, false],
-        "T": [true],
-        "U": [false, false, true],
-        "V": [false, false, false, true],
-        "W": [false, true, true],
-        "X": [true, false, false, true],
-        "Y": [true, false, true, true],
-        "Z": [true, true, false, false]
-    ]
 
 enum gameError: Error {
     case incorrectInputValue(String)
@@ -111,95 +102,104 @@ func convertToMorseArray(morse: String) throws -> [MorseValue] {
     return booleanArray
 }
 
-//struct DicNode {
-//    let sequence : [Bool]
-//    let numberOfWordsEndingHere : Int
-//    var childs:[DicNode] = []
-//}
+struct DicNode {
+    let startIndex : Int
+    let subDic: [[MorseValue]]
+    var subWord : [MorseValue]
+    var numWordsEndingHere : Int = 0
+    var subNodes : [DicNode] = []
+}
 
 
 public typealias MorseValue = Bool
-//public struct MorseValue : Bool {}
 public typealias WordIndex = Int
 public typealias DicIndex = Int
 
-//func constructDicTree () -> DicNode {
-//    var i = 0
-//    var rootNode = DicNode(sequence: [], endOfWord: false)
-//
-//    func digInTree(startPosInWords:Int, startValue:Bool, dicToExplore:[[MorseValue]]) -> DicNode? {
-//        var i = startPosInWords
-//        var currentValue = startValue
-//        var currentSequence : [MorseValue] = [startValue]
-//        let wordsToExplore : [DicIndex] = []
-//
-//        for wordNum in dicToExplore where wordNum.count > startPosInWords {
-//            if dicToExplore[wordNum][startPosInWords] == startValue {
-//                wordsToExplore.append(wordNum)
-//            }
-//        }
-//
-//        if wordsToExplore.isEmpty {
-//            return nil
-//        }
-//
-//        i += 1
-//        let wordsTooShort = { dicToExplore[$0].count <= i }
-//        let wordsEndingHere = wordsToExplore.filter(wordsTooShort)
-//        if !wordsEndingHere.isEmpty {
-//            // stop digging
-//            var currentNode = DicNode(sequence: currentSequence, numberOfWordsEndingHere: wordsEndingHere.count)
-//            let nextWordsToExplore = wordsToExplore.removeAll(wordsTooShort)
-//            currentNode.childs.append(digInTree(startPosInWords: i, startValue: true, dicToExplore: nextWordsToExplore ))
-//            currentNode.childs.append(digInTree(startPosInWords: i, startValue: false, dicToExplore: nextWordsToExplore ))
-//        }
-//        else {
-//            currentValue = dicToExplore[wordsToExplore.first!][i]
-//
-//
-//        }
-//
-//
-//        wordsToExplore.contains{dic[$0][i]}
-//        var allWordsMatches = false
-//    diggingPositions: repeat {
-//            allWordsMatches = false
-//
-//            for wordNum in wordsToExplore {
-//                if dic[wordNum][i]
-//            }
-//        } while allWordsMatches
-//
-//    }
-//
-//    while i<longuestWord {
-//        for wordNum in dicWordSizes[i] {
-//
-//
-//        }
-//    }
-//}
+func constructDicNode(startIndex:Int, subWord:[MorseValue], subDic:[[MorseValue]] ) -> DicNode {
 
-func exploreSequence(_ game:Game, fromIndexInSequence:Int, solutionsFoundFromIndex: inout [Int:Int]) -> Int {
-    if let r = solutionsFoundFromIndex[fromIndexInSequence] {
+    var node = DicNode(startIndex: startIndex, subDic: subDic, subWord: subWord, numWordsEndingHere: 0, subNodes: [])
+    
+    var currentIndex = startIndex + subWord.count
+
+    while true {
+        let subDicWithoutEndingWords = subDic.filter { $0.count > currentIndex }
+        if subDicWithoutEndingWords.count < subDic.count {
+            node.numWordsEndingHere = subDic.filter { $0.count == currentIndex }.count
+            
+            if subDicWithoutEndingWords.count > 0 {
+                let subNodeCandidate = constructDicNode(startIndex: currentIndex, subWord: [], subDic: subDicWithoutEndingWords)
+                if subNodeCandidate.subWord == [] {
+                    node.subNodes = subNodeCandidate.subNodes
+                }
+                else {
+                    node.subNodes.append(subNodeCandidate)
+                }
+            }
+            break
+        }
+        else {
+            let V = subDic.first![currentIndex]
+            let subDicStartingWithValueNotV = subDic.filter { $0[currentIndex] != V }
+            if subDicStartingWithValueNotV.count == 0 {
+                node.subWord.append(V)
+                currentIndex += 1
+            }
+            else {
+                let subDicStartingWithValueV = subDic.filter { $0[currentIndex] == V }
+                node.subNodes.append(constructDicNode(startIndex: currentIndex, subWord: [V], subDic: subDicStartingWithValueV))
+                node.subNodes.append(constructDicNode(startIndex: currentIndex, subWord: [!V], subDic: subDicStartingWithValueNotV))
+                break
+            }
+        }
+    }
+    return node
+}
+
+
+func countSolutions(_ game:Game, startingIndex:Int, solutionCountCacheFromIndex: inout [Int:Int]) -> Int {
+    if let r = solutionCountCacheFromIndex[startingIndex] {
         return r
     }
     else {
         var numSolutionsFound = 0
-        for word in game.dic {
-            if word.count <= (game.sequence.count - fromIndexInSequence) {
-                let subsequence = game.sequence[fromIndexInSequence ..< (fromIndexInSequence + word.count)]
-                if subsequence.elementsEqual(word) {
-                    if subsequence.endIndex == game.sequence.endIndex {
-                        numSolutionsFound += 1
-                    }
-                    else {
-                        numSolutionsFound += exploreSequence(game, fromIndexInSequence: fromIndexInSequence + word.count, solutionsFoundFromIndex: &solutionsFoundFromIndex)
+        
+        var nextDicNodes : [DicNode]? = [game.rootDicNode]
+        var nextIndex = startingIndex
+        
+        while nextDicNodes != nil {
+            let currentDicNodes = nextDicNodes!
+            let currentIndex = nextIndex
+            nextDicNodes = nil
+            
+            for currentDicNode in currentDicNodes {
+                let currentSubWord = currentDicNode.subWord
+                if currentSubWord.count <= (game.sequence.count - currentIndex) {
+                    let subsequence = game.sequence[currentIndex ..< (currentIndex + currentSubWord.count)]
+                    if subsequence.elementsEqual(currentSubWord) {
+                        nextIndex += currentSubWord.count
+                        
+                        if subsequence.endIndex == game.sequence.endIndex {
+                            if currentDicNode.numWordsEndingHere != 0 {
+                                numSolutionsFound += currentDicNode.numWordsEndingHere
+                            }
+                            nextDicNodes = nil
+                        }
+                        else {
+                            if currentDicNode.numWordsEndingHere != 0 {
+                                numSolutionsFound += countSolutions(game, startingIndex: nextIndex, solutionCountCacheFromIndex: &solutionCountCacheFromIndex) * currentDicNode.numWordsEndingHere
+                                nextDicNodes = currentDicNode.subNodes
+                            }
+                            else {
+                                nextDicNodes = currentDicNode.subNodes
+                            }
+                        }
+                        break
                     }
                 }
             }
         }
-        solutionsFoundFromIndex[fromIndexInSequence] = numSolutionsFound
+        
+        solutionCountCacheFromIndex[startingIndex] = numSolutionsFound
         return numSolutionsFound
     }
 }
@@ -209,6 +209,7 @@ struct Game {
     let N:Int
     let dic : [[MorseValue]]
     let sequence : [MorseValue]
+    let rootDicNode : DicNode
 }
 
 public func main() {
@@ -218,7 +219,6 @@ public func main() {
     
     let sequence = try! convertToMorseArray(morse: L)
     var dicWordSizes : [DicIndex:[Int]] = [:]
-//    var longuestWord = 0
 
     if N > 0 {
         for i in 0...(N-1) {
@@ -235,11 +235,12 @@ public func main() {
             
         }
     }
-    let game = Game(N: N, dic: dic, sequence:sequence)
+    let rootDicNode = constructDicNode(startIndex: 0, subWord: [], subDic: dic)
+    let game = Game(N: N, dic: dic, sequence:sequence, rootDicNode: rootDicNode)
     var solutionsFound : [Int:Int] = [:]
-    let s = exploreSequence(game, fromIndexInSequence: 0, solutionsFoundFromIndex: &solutionsFound)
 
-//    debug(solutionsFound)
+    let s = countSolutions(game, startingIndex: 0, solutionCountCacheFromIndex: &solutionsFound)
+
     print(s)
 }
 
