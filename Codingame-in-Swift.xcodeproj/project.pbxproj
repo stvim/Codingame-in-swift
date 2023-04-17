@@ -165,7 +165,6 @@
 		B023472429D4239F00BE94DC /* The_ResistanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_ResistanceTests.swift; sourceTree = "<group>"; };
 		B023472D29D423F700BE94DC /* TheResistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheResistance.swift; sourceTree = "<group>"; };
 		B023472F29D4258D00BE94DC /* test1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test1.txt; sourceTree = "<group>"; };
-		B027E1E429D4E6DF0066E752 /* Algorithm.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Algorithm.md; sourceTree = "<group>"; };
 		B027E1E629D57C430066E752 /* test2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test2.txt; sourceTree = "<group>"; };
 		B027E1E829D57DAB0066E752 /* Solution-CG-Vicente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Solution-CG-Vicente.swift"; sourceTree = "<group>"; };
 		B027E1F029D9E15D0066E752 /* CodeVsZombies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CodeVsZombies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,7 +327,6 @@
 			children = (
 				B023471A29D4239F00BE94DC /* The_Resistance.h */,
 				B023472D29D423F700BE94DC /* TheResistance.swift */,
-				B027E1E429D4E6DF0066E752 /* Algorithm.md */,
 				B027E1E829D57DAB0066E752 /* Solution-CG-Vicente.swift */,
 			);
 			path = "The Resistance";
