@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/steven/Documents/Xcode/Test1/Tests commandLineTool/Codingame_ALL.xcodeproj">
+      location = "self:/Users/steven/Documents/Xcode/Test1/Tests commandLineTool/Codingame-in-Swift.xcodeproj">
    </FileRef>
 </Workspace>
