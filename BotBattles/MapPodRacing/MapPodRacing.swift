@@ -46,76 +46,120 @@ protocol Coordinates : Equatable, Hashable {
 }
 
 extension Coordinates {
+    func toPrint() -> String {
+        return "\(x) \(y)"
+    }
     func distanceTo(_ other:Self) -> Double {
         sqrt(pow(Double(self.x - other.x),2.0)+pow(Double(self.y - other.y),2.0))
     }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.x == rhs.x && lhs.y == rhs.y
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(x)
+        hasher.combine(y)
+    }
 }
 
-struct Position : Coordinates {
+struct Position : Coordinates  {
     let x,y:Int
 }
 
 struct Checkpoint : Coordinates {
     let x,y:Int
-    let position:Int
+
+    var index:Int?
+    var distToMe:Int?
+    var angleToMe:Int?
+    var angleToMeAbs:Int? {
+        if case let x? = angleToMe, x<0 { return -x }
+        else { return x }
+    }
+    
+    mutating func reset() {
+        self.distToMe = nil
+        self.angleToMe = nil
+    }
+    
+}
+
+extension Array<Checkpoint> {
+//    private var currentCheckpointIndex:Int?
+    // test
+    func loopIndex(_ i:Int, offset:Int = 0) -> Int {
+        return  (i+offset)%self.count
+    }
 }
 
 struct Map {
-    var checkpoints:[Coordinates] = []
-    var completed = false
-    var lap = 0
-    var nextCheckpoint:Coordinates?
+    private(set) var checkpoints:[Checkpoint] = []
+    private(set) var completed = false
+    private(set) var lap = 0
     
-    mutating func update(nextCheckpoint:Coordinates) {
-        guard let mapNextCheckpoint = self.nextCheckpoint else {
-            checkpoints.append(nextCheckpoint)
-            self.nextCheckpoint = nextCheckpoint
-        }
-        if mapNextCheckpoint != nextCheckpoint
-        if checkpoints.contains(nextCheckpoint)
+    private(set) var currentCheckpointIndex:Int = -1
+//    func
+    //    var currentCheckpoint:Checkpoint? {
+//        return currentCheckpointIndex.map{ checkpoints[$0] }
+////        return currentCheckpointIndex == nil ? nil : self.checkpoints[self.currentCheckpointIndex!]
+//    }
+    init(currentCheckpoint:Checkpoint) {
+        update(currentCheckpoint: currentCheckpoint)
     }
-    
-    func nextCheckpointForward(offset:Int = 0) -> Coordinates? {
-        if !completed {
-            return nil
+
+    mutating func update(currentCheckpoint:Checkpoint) {
+        checkpoints.indices.forEach{ checkpoints[$0].reset() }
+        
+        if let matchingIndex = self.checkpoints.firstIndex(of: currentCheckpoint) {
+            checkpoints[matchingIndex] = currentCheckpoint
+            
+            if currentCheckpointIndex != matchingIndex {
+                currentCheckpointIndex = matchingIndex
+                
+                if matchingIndex == 0 {
+                    completed = true
+                    lap += 1
+                }
+            }
         }
         else {
-            
+            checkpoints.append(currentCheckpoint)
+            currentCheckpointIndex = checkpoints.count-1
         }
     }
 }
 
 struct GameFrame {
-    static var map = Map()
+    var map : Map
     
     let myPosition:Position
-    let mySpeed:Double = 0.0
-    let nextCheckpoint:Checkpoint
+    let mySpeed:Double
+    let currentCheckpoint:Checkpoint
     let oppPosition:Position
-    let nextCheckpointDist:Int
-    let nextCheckpointAngle:Int
-    let nextCheckpointAngleAbs:Int
     
-//    init(_ input1:[String], _ input2:[String], last:GameFrame?) {
-//        myPosition = Position(x:Int(input1[0])!, y:Int(input1[1])!)
-//        nextCheckpoint = Checkpoint(x:Int(input1[2])!, y:Int(input1[3])!)
-//        nextCheckpointDist = Int(input1[4])!
-//        nextCheckpointAngle = Int(input1[5])!
-//
-//        oppPosition = Position(x:Int(input2[0])!, y:Int(input2[1])!)
-//        nextCheckpointAngleAbs = abs(nextCheckpointAngle)
-//
-//        if let lastTurn = last {
-//            mySpeed = myPosition.distanceTo(lastTurn.myPosition)
-//        }
-//
-//        if !map.checkpoints.contains(nextCheckpoint) {
-//            map.checkpoints.append(nextCheckpoint)
-//        }
-//        if map.checkpoints.last! != nextCheckpoint {
-//
-//        }
-//    }
+    init(_ input1:[String], _ input2:[String], last:GameFrame?) {
+        myPosition = Position(x:Int(input1[0])!, y:Int(input1[1])!)
+        currentCheckpoint = Checkpoint(x:Int(input1[2])!,
+                                    y:Int(input1[3])!,
+                                    distToMe: Int(input1[4])!,
+                                    angleToMe: Int(input1[5])!)
+        if let lastFrame = last {
+            map = lastFrame.map
+            map.update(currentCheckpoint: currentCheckpoint)
+        }
+        else {
+            map = Map(currentCheckpoint: currentCheckpoint)
+        }
+
+        oppPosition = Position(x:Int(input2[0])!, y:Int(input2[1])!)
+
+        if let lastTurn = last {
+            mySpeed = myPosition.distanceTo(lastTurn.myPosition)
+        }
+        else { mySpeed = 0 }
+
+    }
 }
 
 public func main() {
@@ -133,21 +177,23 @@ public func main() {
         var boost = false
         var power = 100
         
-        let d = sqrt(pow(Double(nextCheckpointX-x),2)+pow(Double(nextCheckpointY-y),2))
-        if boostAvailable && d > 8000 && nextCheckpointAngleAbs < 35 {
+//        let d = sqrt(pow(Double(currentCheckpointX-x),2)+pow(Double(currentCheckpointY-y),2))
+        let currentCheckpoint = currentFrame.map.checkpoints[currentFrame.map.currentCheckpointIndex]
+        let d = currentCheckpoint.distToMe!
+        if boostAvailable && d > 8000 && currentCheckpoint.angleToMeAbs! < 35 {
             boost = true
             boostAvailable = false
         }
         // You have to output the target position
         // followed by the power (0 <= thrust <= 100)
         // i.e.: "x y thrust"
-        if nextCheckpointAngle > 90 || nextCheckpointAngle < -90 {
+        if currentCheckpoint.angleToMeAbs! > 90 {
             power = 0
         }
         else {
             power = 100
         }
-        print("\(nextCheckpointX) \(nextCheckpointY)",boost ? "BOOST":power)
+        print("\(currentCheckpoint.toPrint())",boost ? "BOOST":power)
         lastFrame = currentFrame
     }
 }
