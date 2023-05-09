@@ -53,15 +53,28 @@ extension Coordinates {
         sqrt(pow(Double(self.x - other.x),2.0)+pow(Double(self.y - other.y),2.0))
     }
     
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.x == rhs.x && lhs.y == rhs.y
+    // weird. To be continued...
+    func equals (other: some Coordinates) -> Bool {
+        return self.x == other.x && self.y == other.y
     }
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.equals(other: rhs)
+        //        return lhs.x == rhs.x && lhs.y == rhs.y
+    }
+
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(x)
         hasher.combine(y)
     }
+    
 }
+
+func testSameCoordinates<T:Coordinates> (_ lhs: T, _ rhs: T) -> Bool {
+    return true
+}
+
+
 
 struct Position : Coordinates  {
     let x,y:Int
@@ -79,8 +92,10 @@ struct Checkpoint : Coordinates {
     }
     
     mutating func reset() {
-        self.distToMe = nil
-        self.angleToMe = nil
+        if self.distToMe != nil {
+            self.distToMe = nil
+            self.angleToMe = nil
+        }
     }
     
 }
@@ -98,21 +113,26 @@ struct Map {
     private(set) var completed = false
     private(set) var lap = 0
     
-    private(set) var currentCheckpointIndex:Int = -1
+    private(set) var currentCheckpointIndex:Int?
+    private(set) var nextCheckpointIndex:Int?
 //    func
     //    var currentCheckpoint:Checkpoint? {
 //        return currentCheckpointIndex.map{ checkpoints[$0] }
 ////        return currentCheckpointIndex == nil ? nil : self.checkpoints[self.currentCheckpointIndex!]
 //    }
-    init(currentCheckpoint:Checkpoint) {
-        update(currentCheckpoint: currentCheckpoint)
-    }
+//    init(currentCheckpoint:Checkpoint) {
+//        update(currentCheckpoint: currentCheckpoint)
+//    }
 
-    mutating func update(currentCheckpoint:Checkpoint) {
+//    mutating func update(currentCheckpoint:Checkpoint) {
+    mutating func updateCurrentCheckpoint(coordinates:some Coordinates, distToMe:Int, angleToMe:Int) {
         checkpoints.indices.forEach{ checkpoints[$0].reset() }
         
-        if let matchingIndex = self.checkpoints.firstIndex(of: currentCheckpoint) {
-            checkpoints[matchingIndex] = currentCheckpoint
+        if let matchingIndex = self.checkpoints.firstIndex(where: { $0.equals(other: coordinates) }) {
+            
+            checkpoints[matchingIndex].distToMe = distToMe
+            checkpoints[matchingIndex].angleToMe = angleToMe
+            currentCheckpointIndex = matchingIndex
             
             if currentCheckpointIndex != matchingIndex {
                 currentCheckpointIndex = matchingIndex
@@ -121,11 +141,16 @@ struct Map {
                     completed = true
                     lap += 1
                 }
+                
+                if completed {
+                    nextCheckpointIndex = checkpoints.loopIndex(currentCheckpointIndex!, offset: 1)
+                }
             }
         }
         else {
-            checkpoints.append(currentCheckpoint)
-            currentCheckpointIndex = checkpoints.count-1
+            currentCheckpointIndex = checkpoints.count
+            checkpoints.append(Checkpoint(x: coordinates.x, y: coordinates.y, index: currentCheckpointIndex, distToMe: distToMe, angleToMe: angleToMe))
+            
         }
     }
 }
@@ -135,22 +160,21 @@ struct GameFrame {
     
     let myPosition:Position
     let mySpeed:Double
-    let currentCheckpoint:Checkpoint
     let oppPosition:Position
     
     init(_ input1:[String], _ input2:[String], last:GameFrame?) {
         myPosition = Position(x:Int(input1[0])!, y:Int(input1[1])!)
-        currentCheckpoint = Checkpoint(x:Int(input1[2])!,
-                                    y:Int(input1[3])!,
-                                    distToMe: Int(input1[4])!,
-                                    angleToMe: Int(input1[5])!)
+        let currentCheckpointPosition = Position(x:Int(input1[2])!,
+                                            y:Int(input1[3])!)
         if let lastFrame = last {
             map = lastFrame.map
-            map.update(currentCheckpoint: currentCheckpoint)
         }
         else {
-            map = Map(currentCheckpoint: currentCheckpoint)
+            map = Map()
         }
+        map.updateCurrentCheckpoint(coordinates: currentCheckpointPosition,
+                                    distToMe: Int(input1[4])!,
+                                    angleToMe: Int(input1[5])!)
 
         oppPosition = Position(x:Int(input2[0])!, y:Int(input2[1])!)
 
@@ -178,7 +202,7 @@ public func main() {
         var power = 100
         
 //        let d = sqrt(pow(Double(currentCheckpointX-x),2)+pow(Double(currentCheckpointY-y),2))
-        let currentCheckpoint = currentFrame.map.checkpoints[currentFrame.map.currentCheckpointIndex]
+        let currentCheckpoint = currentFrame.map.checkpoints[currentFrame.map.currentCheckpointIndex!]
         let d = currentCheckpoint.distToMe!
         if boostAvailable && d > 8000 && currentCheckpoint.angleToMeAbs! < 35 {
             boost = true
