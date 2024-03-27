@@ -8,42 +8,50 @@
 import Foundation
 
 func getCableLength(nRows: Int, nCols: Int, image: [String]) -> Int? {
-    return getCableVerticalLength(image:image) + getCableVerticalLength(image: getRotated(image))
+    let distance = getCableVerticalLength(image:image) + getCableVerticalLength(image: getRotated(image))
+    return distance % 1000000007
 }
 
 func getCableVerticalLength(image: [String]) -> Int {
     // Write your code here
     
-    var cellsByRowDistance = [Character:[Int]]()
+    var cellsRowDistance = [Character:(cells:Int,distance:Int)]()
     var totalDistance : Int = 0
     image.enumerated().forEach{
         (rowIndex,row) in
-        // new row : Shifting previous cells distances by 1 in lists
-        cellsByRowDistance.keys.forEach{
-            cellsByRowDistance[$0]!.insert(0, at: 0)
-        }
+
+
         let thisRowColors = Set<Character>(row)
-        // looking for new colors
+
+        // Adding in dictionary the new colors if necessary
         thisRowColors
-            .subtracting(cellsByRowDistance.keys)
+            .subtracting(cellsRowDistance.keys)
             .forEach{
-                cellsByRowDistance[$0] = [0]
+                cellsRowDistance[$0] = (cells:0, distance:0)
             }
-        // computing distance for every color
-        thisRowColors.forEach{
-            currentColor in
-            let cellsOfCurrentColorInRow = row.filter({ $0 == currentColor}).count
-            // updating dictionary with this row
-            cellsByRowDistance[currentColor]![0] = cellsOfCurrentColorInRow
-            let verticalDistanceToEveryPreviousCells = cellsByRowDistance[currentColor]!
-                .enumerated()
-                .map{ (index,value) in index * value }
-                .reduce(0, { $0 + $1 })
-            let newCablesToWireLength = cellsOfCurrentColorInRow * verticalDistanceToEveryPreviousCells
-            
-            totalDistance += 2*(newCablesToWireLength)
-        }
         
+        // computing distance for every color with the dictionary
+        cellsRowDistance.keys.forEach{
+            currentColor in
+            
+            let cellsOfCurrentColorInRow = row.filter({ $0 == currentColor}).count
+            if cellsOfCurrentColorInRow > 0 {
+                let verticalDistanceToEveryPreviousCells = cellsRowDistance[currentColor]!.distance
+                let newCablesToWireLength = cellsOfCurrentColorInRow * verticalDistanceToEveryPreviousCells
+                
+                totalDistance += 2*(newCablesToWireLength)
+            }
+            
+            // now preparing dictionary of distances for next row : adding 1 to distance for every known cell
+            let previousCells = cellsRowDistance[currentColor]!.cells
+            let previousDistance = cellsRowDistance[currentColor]!.distance
+            let newCells = previousCells + cellsOfCurrentColorInRow
+            let newDistance = previousDistance + newCells
+            
+            cellsRowDistance[currentColor] = (cells: newCells
+                                              , distance: newDistance)
+        }
+            
         totalDistance = totalDistance % 1000000007
     }
     
