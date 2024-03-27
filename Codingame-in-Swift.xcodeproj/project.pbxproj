@@ -27,6 +27,12 @@
 		B027E24729DC4EF80066E752 /* TempPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B027E23829DC2B750066E752 /* TempPlayTests.swift */; };
 		B027E24A29DC7C8F0066E752 /* TempPlayTest1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B027E24829DC4F450066E752 /* TempPlayTest1.txt */; };
 		B029B17929CF271C0007C69A /* Tests Explore Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE042929CCBA51001136B1 /* Tests Explore Bundle.swift */; };
+		B05D4DC62BB4340C0098E380 /* Challenge2024Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D4DBE2BB4340B0098E380 /* Challenge2024Spring.framework */; };
+		B05D4DCB2BB4340C0098E380 /* Challenge2024SpringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DCA2BB4340C0098E380 /* Challenge2024SpringTests.swift */; };
+		B05D4DCC2BB4340C0098E380 /* Challenge2024Spring.h in Headers */ = {isa = PBXBuildFile; fileRef = B05D4DC02BB4340B0098E380 /* Challenge2024Spring.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B05D4DD62BB4349D0098E380 /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DD52BB4349D0098E380 /* Level2.swift */; };
+		B05D4DD82BB43A8D0098E380 /* Level5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DD72BB43A8C0098E380 /* Level5.swift */; };
+		B05D4DDC2BB453070098E380 /* Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DDB2BB453070098E380 /* Level6.swift */; };
 		B0AE03CA29C9C87B001136B1 /* CodingameCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE03C929C9C87B001136B1 /* CodingameCommonTests.swift */; };
 		B0AE03DD29C9D96C001136B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE03DC29C9D96C001136B1 /* main.swift */; };
 		B0AE040B29CCAD8C001136B1 /* DeathFirstSearch.docc in Sources */ = {isa = PBXBuildFile; fileRef = B0AE040A29CCAD8C001136B1 /* DeathFirstSearch.docc */; };
@@ -99,6 +105,20 @@
 			remoteInfo = Other;
 		};
 		B027E24429DC2BAA0066E752 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0AE044529CDC464001136B1;
+			remoteInfo = CodingameCommon;
+		};
+		B05D4DC72BB4340C0098E380 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B05D4DBD2BB4340B0098E380;
+			remoteInfo = Challenge2024Spring;
+		};
+		B05D4DD92BB447380098E380 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
 			proxyType = 1;
@@ -184,6 +204,13 @@
 		B027E23829DC2B750066E752 /* TempPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempPlayTests.swift; sourceTree = "<group>"; };
 		B027E24829DC4F450066E752 /* TempPlayTest1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TempPlayTest1.txt; sourceTree = "<group>"; };
 		B027E24B29DCA5780066E752 /* ClashCode recursive find way Manhattan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClashCode recursive find way Manhattan.swift"; sourceTree = "<group>"; };
+		B05D4DBE2BB4340B0098E380 /* Challenge2024Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Challenge2024Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B05D4DC02BB4340B0098E380 /* Challenge2024Spring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Challenge2024Spring.h; sourceTree = "<group>"; };
+		B05D4DC52BB4340C0098E380 /* Challenge2024SpringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Challenge2024SpringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B05D4DCA2BB4340C0098E380 /* Challenge2024SpringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge2024SpringTests.swift; sourceTree = "<group>"; };
+		B05D4DD52BB4349D0098E380 /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
+		B05D4DD72BB43A8C0098E380 /* Level5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level5.swift; sourceTree = "<group>"; };
+		B05D4DDB2BB453070098E380 /* Level6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level6.swift; sourceTree = "<group>"; };
 		B0AE039D29C8B895001136B1 /* test1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = test1.txt; sourceTree = "<group>"; };
 		B0AE039E29C8BE62001136B1 /* test1_result.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test1_result.txt; sourceTree = "<group>"; };
 		B0AE03BD29C9C87A001136B1 /* CodingameCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodingameCommon.h; sourceTree = "<group>"; };
@@ -264,6 +291,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B027E23429DC2B750066E752 /* Other.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05D4DBB2BB4340B0098E380 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05D4DC22BB4340C0098E380 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B05D4DC62BB4340C0098E380 /* Challenge2024Spring.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +459,34 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		B05D4DB72BB433500098E380 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				B05D4DBF2BB4340B0098E380 /* Challenge2024Spring */,
+				B05D4DC92BB4340C0098E380 /* Challenge2024SpringTests */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		B05D4DBF2BB4340B0098E380 /* Challenge2024Spring */ = {
+			isa = PBXGroup;
+			children = (
+				B05D4DC02BB4340B0098E380 /* Challenge2024Spring.h */,
+				B05D4DD52BB4349D0098E380 /* Level2.swift */,
+				B05D4DD72BB43A8C0098E380 /* Level5.swift */,
+				B05D4DDB2BB453070098E380 /* Level6.swift */,
+			);
+			path = Challenge2024Spring;
+			sourceTree = "<group>";
+		};
+		B05D4DC92BB4340C0098E380 /* Challenge2024SpringTests */ = {
+			isa = PBXGroup;
+			children = (
+				B05D4DCA2BB4340C0098E380 /* Challenge2024SpringTests.swift */,
+			);
+			path = Challenge2024SpringTests;
+			sourceTree = "<group>";
+		};
 		B0AE03BC29C9C87A001136B1 /* CodingameCommon */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +539,7 @@
 		B0B12F1729C3167000F807CF = {
 			isa = PBXGroup;
 			children = (
+				B05D4DB72BB433500098E380 /* Challenges */,
 				B027E22129DB58330066E752 /* BotBattles */,
 				B027E1EA29D9E1180066E752 /* Optimization */,
 				B027E1E529D567690066E752 /* Puzzle Hard */,
@@ -498,6 +569,8 @@
 				B027E21329DB58250066E752 /* MapPodRacingTests.xctest */,
 				B027E22C29DC2B740066E752 /* Other.framework */,
 				B027E23329DC2B750066E752 /* OtherTests.xctest */,
+				B05D4DBE2BB4340B0098E380 /* Challenge2024Spring.framework */,
+				B05D4DC52BB4340C0098E380 /* Challenge2024SpringTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -534,6 +607,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B027E23A29DC2B750066E752 /* Other.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05D4DB92BB4340B0098E380 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B05D4DCC2BB4340C0098E380 /* Challenge2024Spring.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +784,43 @@
 			productReference = B027E23329DC2B750066E752 /* OtherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B05D4DBD2BB4340B0098E380 /* Challenge2024Spring */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B05D4DCD2BB4340C0098E380 /* Build configuration list for PBXNativeTarget "Challenge2024Spring" */;
+			buildPhases = (
+				B05D4DB92BB4340B0098E380 /* Headers */,
+				B05D4DBA2BB4340B0098E380 /* Sources */,
+				B05D4DBB2BB4340B0098E380 /* Frameworks */,
+				B05D4DBC2BB4340B0098E380 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B05D4DDA2BB447380098E380 /* PBXTargetDependency */,
+			);
+			name = Challenge2024Spring;
+			productName = Challenge2024Spring;
+			productReference = B05D4DBE2BB4340B0098E380 /* Challenge2024Spring.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B05D4DC42BB4340C0098E380 /* Challenge2024SpringTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B05D4DD02BB4340C0098E380 /* Build configuration list for PBXNativeTarget "Challenge2024SpringTests" */;
+			buildPhases = (
+				B05D4DC12BB4340C0098E380 /* Sources */,
+				B05D4DC22BB4340C0098E380 /* Frameworks */,
+				B05D4DC32BB4340C0098E380 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B05D4DC82BB4340C0098E380 /* PBXTargetDependency */,
+			);
+			name = Challenge2024SpringTests;
+			productName = Challenge2024SpringTests;
+			productReference = B05D4DC52BB4340C0098E380 /* Challenge2024SpringTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B0AE03C329C9C87B001136B1 /* CodingameCommonTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0AE03CF29C9C87B001136B1 /* Build configuration list for PBXNativeTarget "CodingameCommonTests" */;
@@ -852,6 +970,13 @@
 					B027E23229DC2B750066E752 = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					B05D4DBD2BB4340B0098E380 = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+					};
+					B05D4DC42BB4340C0098E380 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					B0AE03C329C9C87B001136B1 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -897,6 +1022,8 @@
 				B027E21229DB58250066E752 /* MapPodRacingTests */,
 				B027E22B29DC2B740066E752 /* Other */,
 				B027E23229DC2B750066E752 /* OtherTests */,
+				B05D4DBD2BB4340B0098E380 /* Challenge2024Spring */,
+				B05D4DC42BB4340C0098E380 /* Challenge2024SpringTests */,
 			);
 		};
 /* End PBXProject section */
@@ -958,6 +1085,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B027E24A29DC7C8F0066E752 /* TempPlayTest1.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05D4DBC2BB4340B0098E380 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05D4DC32BB4340C0098E380 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1058,6 +1199,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B05D4DBA2BB4340B0098E380 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B05D4DDC2BB453070098E380 /* Level6.swift in Sources */,
+				B05D4DD82BB43A8D0098E380 /* Level5.swift in Sources */,
+				B05D4DD62BB4349D0098E380 /* Level2.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05D4DC12BB4340C0098E380 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B05D4DCB2BB4340C0098E380 /* Challenge2024SpringTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0AE03C029C9C87B001136B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1145,6 +1304,16 @@
 			isa = PBXTargetDependency;
 			target = B0AE044529CDC464001136B1 /* CodingameCommon */;
 			targetProxy = B027E24429DC2BAA0066E752 /* PBXContainerItemProxy */;
+		};
+		B05D4DC82BB4340C0098E380 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B05D4DBD2BB4340B0098E380 /* Challenge2024Spring */;
+			targetProxy = B05D4DC72BB4340C0098E380 /* PBXContainerItemProxy */;
+		};
+		B05D4DDA2BB447380098E380 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0AE044529CDC464001136B1 /* CodingameCommon */;
+			targetProxy = B05D4DD92BB447380098E380 /* PBXContainerItemProxy */;
 		};
 		B0AE041329CCAD8C001136B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1524,6 +1693,105 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.OtherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B05D4DCE2BB4340C0098E380 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.Challenge2024Spring;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B05D4DCF2BB4340C0098E380 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.Challenge2024Spring;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B05D4DD12BB4340C0098E380 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.Challenge2024SpringTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B05D4DD22BB4340C0098E380 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.Challenge2024SpringTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1939,6 +2207,24 @@
 			buildConfigurations = (
 				B027E23F29DC2B750066E752 /* Debug */,
 				B027E24029DC2B750066E752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B05D4DCD2BB4340C0098E380 /* Build configuration list for PBXNativeTarget "Challenge2024Spring" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B05D4DCE2BB4340C0098E380 /* Debug */,
+				B05D4DCF2BB4340C0098E380 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B05D4DD02BB4340C0098E380 /* Build configuration list for PBXNativeTarget "Challenge2024SpringTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B05D4DD12BB4340C0098E380 /* Debug */,
+				B05D4DD22BB4340C0098E380 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
