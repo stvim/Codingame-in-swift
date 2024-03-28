@@ -35,6 +35,13 @@ final class Challenge2024SpringTests: XCTestCase {
         let input1 = 12
         let input2 = ["bbCCCCC3cC3c","1CAABBBC3c3c","aCAAbbbC312A","aCCBbabCB111","3CBBbbbC2C12","CCBAca3C2a1C","2ACCCCCaaaaa","b33ccccccccc"]
         
-        debugPrint(findLargestCircle(nRows: input0, nCols: input1, image: input2))
+        debugPrint(String(describing: findLargestCircle(nRows: input0, nCols: input1, image: input2)))
+    }
+    
+    func test_level9() {
+        let input = [
+            "01", "101", "011"
+        ]
+        debugPrint(String(describing: crashDecode(codes: input)))
     }
 }

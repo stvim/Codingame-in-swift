@@ -44,6 +44,7 @@
 		B0AE044A29CDC464001136B1 /* CodingameCommon.docc in Sources */ = {isa = PBXBuildFile; fileRef = B0AE03BE29C9C87B001136B1 /* CodingameCommon.docc */; };
 		B0AE045229CDC48F001136B1 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE03E229CA0782001136B1 /* Dialog.swift */; };
 		B0AE045C29CE5001001136B1 /* DeathFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE043E29CDB0E5001136B1 /* DeathFirstSearch.swift */; };
+		B0C2E0A82BB56F71009FDAE3 /* Level9.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2E0A72BB56C94009FDAE3 /* Level9.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -231,6 +232,7 @@
 		B0AE044229CDB44B001136B1 /* DeathFirstSearch test wrong directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeathFirstSearch test wrong directory.swift"; path = "DeathFirstSearch/DeathFirstSearch test wrong directory.swift"; sourceTree = SOURCE_ROOT; };
 		B0AE045129CDC464001136B1 /* CodingameCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CodingameCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B12F2029C3167100F807CF /* Codingame_ALL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Codingame_ALL; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C2E0A72BB56C94009FDAE3 /* Level9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level9.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +478,7 @@
 				B05D4DDD2BB4D0CE0098E380 /* Level4.swift */,
 				B05D4DD72BB43A8C0098E380 /* Level5.swift */,
 				B05D4DDB2BB453070098E380 /* Level6.swift */,
+				B0C2E0A72BB56C94009FDAE3 /* Level9.swift */,
 			);
 			path = Challenge2024Spring;
 			sourceTree = "<group>";
@@ -1204,6 +1207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C2E0A82BB56F71009FDAE3 /* Level9.swift in Sources */,
 				B05D4DD62BB4349D0098E380 /* Level2.swift in Sources */,
 				B05D4DDE2BB4D0CE0098E380 /* Level4.swift in Sources */,
 			);
