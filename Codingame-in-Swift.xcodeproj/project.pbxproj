@@ -31,8 +31,7 @@
 		B05D4DCB2BB4340C0098E380 /* Challenge2024SpringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DCA2BB4340C0098E380 /* Challenge2024SpringTests.swift */; };
 		B05D4DCC2BB4340C0098E380 /* Challenge2024Spring.h in Headers */ = {isa = PBXBuildFile; fileRef = B05D4DC02BB4340B0098E380 /* Challenge2024Spring.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B05D4DD62BB4349D0098E380 /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DD52BB4349D0098E380 /* Level2.swift */; };
-		B05D4DD82BB43A8D0098E380 /* Level5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DD72BB43A8C0098E380 /* Level5.swift */; };
-		B05D4DDC2BB453070098E380 /* Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DDB2BB453070098E380 /* Level6.swift */; };
+		B05D4DDE2BB4D0CE0098E380 /* Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D4DDD2BB4D0CE0098E380 /* Level4.swift */; };
 		B0AE03CA29C9C87B001136B1 /* CodingameCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE03C929C9C87B001136B1 /* CodingameCommonTests.swift */; };
 		B0AE03DD29C9D96C001136B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE03DC29C9D96C001136B1 /* main.swift */; };
 		B0AE040B29CCAD8C001136B1 /* DeathFirstSearch.docc in Sources */ = {isa = PBXBuildFile; fileRef = B0AE040A29CCAD8C001136B1 /* DeathFirstSearch.docc */; };
@@ -211,6 +210,7 @@
 		B05D4DD52BB4349D0098E380 /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
 		B05D4DD72BB43A8C0098E380 /* Level5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level5.swift; sourceTree = "<group>"; };
 		B05D4DDB2BB453070098E380 /* Level6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level6.swift; sourceTree = "<group>"; };
+		B05D4DDD2BB4D0CE0098E380 /* Level4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level4.swift; sourceTree = "<group>"; };
 		B0AE039D29C8B895001136B1 /* test1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = test1.txt; sourceTree = "<group>"; };
 		B0AE039E29C8BE62001136B1 /* test1_result.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test1_result.txt; sourceTree = "<group>"; };
 		B0AE03BD29C9C87A001136B1 /* CodingameCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodingameCommon.h; sourceTree = "<group>"; };
@@ -473,6 +473,7 @@
 			children = (
 				B05D4DC02BB4340B0098E380 /* Challenge2024Spring.h */,
 				B05D4DD52BB4349D0098E380 /* Level2.swift */,
+				B05D4DDD2BB4D0CE0098E380 /* Level4.swift */,
 				B05D4DD72BB43A8C0098E380 /* Level5.swift */,
 				B05D4DDB2BB453070098E380 /* Level6.swift */,
 			);
@@ -1203,9 +1204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B05D4DDC2BB453070098E380 /* Level6.swift in Sources */,
-				B05D4DD82BB43A8D0098E380 /* Level5.swift in Sources */,
 				B05D4DD62BB4349D0098E380 /* Level2.swift in Sources */,
+				B05D4DDE2BB4D0CE0098E380 /* Level4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

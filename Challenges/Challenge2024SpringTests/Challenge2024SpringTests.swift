@@ -19,7 +19,7 @@ final class Challenge2024SpringTests: XCTestCase {
     }
 
 
-    func testScenario() throws {
+//    func testScenario() throws {
 //        let fileName = "test1"
 //
 //
@@ -27,7 +27,14 @@ final class Challenge2024SpringTests: XCTestCase {
 //        let fileUrl = bundle.url(forResource: fileName, withExtension: "txt")!
         
 //        Dialog.mode = DialogMode.Scenario(gameData: GameData(inputDataFile: fileUrl))
-        solve(n: 6, targetImage: [".#.#..", ".#.#..", "...#..", ".#.#..", ".#.#..", ".#.#.."])
-    }
+//        solve(n: 6, targetImage: [".#.#..", ".#.#..", "...#..", ".#.#..", ".#.#..", ".#.#.."])
+//    }
 
+    func test_level4() {
+        let input0 = 8
+        let input1 = 12
+        let input2 = ["bbCCCCC3cC3c","1CAABBBC3c3c","aCAAbbbC312A","aCCBbabCB111","3CBBbbbC2C12","CCBAca3C2a1C","2ACCCCCaaaaa","b33ccccccccc"]
+        
+        debugPrint(findLargestCircle(nRows: input0, nCols: input1, image: input2))
+    }
 }
