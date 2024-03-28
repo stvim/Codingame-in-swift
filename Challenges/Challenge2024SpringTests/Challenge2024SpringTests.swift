@@ -39,9 +39,14 @@ final class Challenge2024SpringTests: XCTestCase {
     }
     
     func test_level9() {
-        let input = [
+        let input0 = [
             "01", "101", "011"
         ]
-        debugPrint(String(describing: crashDecode(codes: input)))
+        let input3 = [
+            "1", "10", "00"
+            ]
+        let result0 = "01101"
+        let result3 = "X"
+        debugPrint(crashDecode(codes: input3)!)
     }
 }
