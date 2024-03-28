@@ -10,7 +10,11 @@ import Foundation
 typealias Bit = Bool
 typealias Depth = Int
 
-class Node {
+class Node : Equatable {
+    static func == (lhs: Node, rhs: Node) -> Bool {
+        lhs.path == rhs.path
+    }
+    
     init(path: [Bit], endOfCode: Bool, nextFalse: Node? = nil, nextTrue: Node? = nil) {
         self.path = path
         self.depth = path.count
@@ -68,9 +72,107 @@ func constructBinaryTree(codes : [[Bit]], path:[Bit], invalidNodesByDepth: inout
 }
 
 struct PathToExplore {
+    init(path: [Bit]
+         , previousPath: PathToExplore?
+         , rootNode:Node
+         , node1: Node
+         , node2: Node)
+    {
+        self.path = path
+        self.node1 = node1
+        self.node2 = node2
+        if let previousPath = previousPath {
+            // tracking if one of paths is starting from the root, meaning that previous path had reached an end of code
+            self.path1EndOfCodes = {
+                var value = previousPath.path1EndOfCodes
+                if node1.depth == 1 {
+                    value.append(previousPath.node1)
+                }
+                return value
+            }()
+            self.path2EndOfCodes  = {
+                var value = previousPath.path2EndOfCodes
+                if node2.depth == 1 {
+                    value.append(previousPath.node2)
+                }
+                return value
+            }()
+            
+        } else {
+            self.path1EndOfCodes = []
+            self.path2EndOfCodes = []
+        }
+        self.rootNode = rootNode
+    }
     let path:[Bit]
     let node1:Node
     let node2:Node
+    let path1EndOfCodes : [Node]
+    let path2EndOfCodes : [Node]
+    let rootNode : Node
+    
+    var solutionFound: Bool {
+        node1.endOfCode && node2.endOfCode
+    }
+    
+    func getNextPathsToExplore() -> [PathToExplore] {
+        // if the current self is a solution, we do not provide more paths to explore
+        if (node1.endOfCode && node2.endOfCode) {
+            return []
+        }
+        // Idem if the last complete codes reached by both paths are the same (to avoid an infinite loop)
+        if let lastPath1EndOfCode = path1EndOfCodes.last
+            , let lastPath2EndOfCode = path2EndOfCodes.last
+            , lastPath1EndOfCode == lastPath2EndOfCode
+        {
+            return []
+        }
+        
+        
+        let pathToExplore = self
+        var nextDepthPathsToExplore = [PathToExplore]()
+        
+        // if node 1 is endOfCode : we should continue searching with next nodes but also starting from the root node
+        // Idem for node 2
+        // Lets build a list of couple (node1,node2) to keep exploring
+        var nodesToExplore = [(node1:node1, node2:node2)]
+        if node1.endOfCode {
+            nodesToExplore.append((node1:rootNode, node2:node2))
+        } else if node2.endOfCode {
+            nodesToExplore.append((node1:node1, node2:rootNode))
+        }
+        
+        // Warning : node1 and node2 could be equal here in certain cases, we must avoid that
+        nodesToExplore = nodesToExplore.filter{ $0.node1 != $0.node2 }
+        
+        // For every couple now, searching for next nodes existing for both elements
+        nodesToExplore
+            .forEach{
+                (node1, node2) in
+                
+                if let node1NextFalse = node1.nextFalse
+                    , let node2NextFalse = node2.nextFalse
+                {
+                    nextDepthPathsToExplore.append(PathToExplore(path: path + [false]
+                                                                 , previousPath: pathToExplore
+                                                                 , rootNode: rootNode
+                                                                 , node1: node1NextFalse
+                                                                 , node2: node2NextFalse))
+                }
+                
+                if let node1NextTrue = node1.nextTrue
+                    , let node2NextTrue = node2.nextTrue
+                {
+                    nextDepthPathsToExplore.append(PathToExplore(path: path + [true]
+                                                                 , previousPath: pathToExplore
+                                                                 , rootNode: rootNode
+                                                                 , node1: node1NextTrue
+                                                                 , node2: node2NextTrue))
+                }
+            }
+        
+        return nextDepthPathsToExplore
+    }
 }
 
 func parallelSearch(currentDepth:Int
@@ -86,6 +188,8 @@ func parallelSearch(currentDepth:Int
         pathsToExplore.append(contentsOf: invalidNodesAtCurrentDepth.map{
             invalidNode in
             PathToExplore(path: invalidNode.path
+                          , previousPath: nil
+                          , rootNode: rootNode
                           , node1: invalidNode
                           , node2: rootNode)
         })
@@ -114,43 +218,10 @@ func parallelSearch(currentDepth:Int
     var nextDepthPathsToExplore = [PathToExplore]()
     
     for pathToExplore in pathsToExplore {
-        if pathToExplore.node1.endOfCode && pathToExplore.node2.endOfCode {
+        if pathToExplore.solutionFound {
             return pathToExplore.path
         } else {
-            // if node 1 is endOfCode : we should continue searching with next nodes but also starting from the root node
-            // Idem for node 2
-            // Lets build a list of couple (node1,node2) to keep exploring
-            var nodesToExplore = [(node1:pathToExplore.node1, node2:pathToExplore.node2)]
-            if pathToExplore.node1.endOfCode {
-                nodesToExplore.append((node1:rootNode, node2:pathToExplore.node2))
-            } else if pathToExplore.node2.endOfCode {
-                nodesToExplore.append((node1:pathToExplore.node1, node2:rootNode))
-            }
-            
-            // Warning : node1 and node2 could be equal here in certain cases, we must avoid that
-            nodesToExplore = nodesToExplore.filter{ $0.node1.path != $0.node2.path }
-            
-            // For every couple now, searching for next nodes existing for both elements
-            nodesToExplore
-                .forEach{
-                    (node1, node2) in
-                    
-                    if let node1NextFalse = node1.nextFalse
-                        , let node2NextFalse = node2.nextFalse
-                    {
-                        nextDepthPathsToExplore.append(PathToExplore(path: pathToExplore.path + [false]
-                                                                     , node1: node1NextFalse
-                                                                     , node2: node2NextFalse))
-                    }
-                    
-                    if let node1NextTrue = node1.nextTrue
-                        , let node2NextTrue = node2.nextTrue
-                    {
-                        nextDepthPathsToExplore.append(PathToExplore(path: pathToExplore.path + [true]
-                                                                     , node1: node1NextTrue
-                                                                     , node2: node2NextTrue))
-                    }
-                }
+            nextDepthPathsToExplore.append(contentsOf: pathToExplore.getNextPathsToExplore())
         }
     }
     
@@ -167,7 +238,6 @@ func crashDecode(codes input: [String]) -> String? {
     
     let rootNode = constructBinaryTree(codes: codes, path: [], invalidNodesByDepth: &invalidNodesByDepth)!
 
-    rootNode.description.forEach({ debugPrint($0)})
     var firstFoundWord : [Bit]? = nil
     if let startingSearchDepth = invalidNodesByDepth.keys.min() {
         firstFoundWord = parallelSearch(currentDepth: startingSearchDepth
