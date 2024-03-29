@@ -29,16 +29,7 @@ class Node : Equatable {
     let nextFalse : Node?
     let nextTrue : Node?
     let invalidNode : Bool
-    
-    var description: [String] {
-        var str = [String](repeating: " ", count: depth).joined() + "-"
-        str += path.map{ $0 ? "1" : "0" }
-        str += endOfCode ? " (*)" : ""
-        var result = [str]
-        result.append(contentsOf: nextFalse?.description ?? [])
-        result.append(contentsOf: nextTrue?.description ?? [])
-        return result
-    }
+
 }
 
 func constructBinaryTree(codes : [[Bit]], path:[Bit], invalidNodesByDepth: inout [Depth:[Node]]) -> Node? {
@@ -120,7 +111,7 @@ struct PathToExplore {
         if (node1.endOfCode && node2.endOfCode) {
             return []
         }
-        // Idem if the last complete codes reached by both paths are the same (to avoid an infinite loop)
+        // Idem if the lasts complete codes reached by both paths are the same (to avoid an infinite loop)
         if let lastPath1EndOfCode = path1EndOfCodes.last
             , let lastPath2EndOfCode = path2EndOfCodes.last
             , lastPath1EndOfCode == lastPath2EndOfCode
@@ -129,7 +120,6 @@ struct PathToExplore {
         }
         
         
-        let pathToExplore = self
         var nextDepthPathsToExplore = [PathToExplore]()
         
         // if node 1 is endOfCode : we should continue searching with next nodes but also starting from the root node
@@ -154,7 +144,7 @@ struct PathToExplore {
                     , let node2NextFalse = node2.nextFalse
                 {
                     nextDepthPathsToExplore.append(PathToExplore(path: path + [false]
-                                                                 , previousPath: pathToExplore
+                                                                 , previousPath: self
                                                                  , rootNode: rootNode
                                                                  , node1: node1NextFalse
                                                                  , node2: node2NextFalse))
@@ -164,7 +154,7 @@ struct PathToExplore {
                     , let node2NextTrue = node2.nextTrue
                 {
                     nextDepthPathsToExplore.append(PathToExplore(path: path + [true]
-                                                                 , previousPath: pathToExplore
+                                                                 , previousPath: self
                                                                  , rootNode: rootNode
                                                                  , node1: node1NextTrue
                                                                  , node2: node2NextTrue))
@@ -175,61 +165,65 @@ struct PathToExplore {
     }
 }
 
-func parallelSearch(currentDepth:Int
-                    , pathsToExplore inputPathsToExplore: [PathToExplore]
-                    , invalidNodesByDepth: [Depth:[Node]]
+// will search every possible solution starting from depth 0 and digging every possible path in parallel
+func parallelSearch(invalidNodesByDepth: [Depth:[Node]]
                     , rootNode: Node
                     ) -> [Bit]?
 {
+    var currentDepth = 0
+    var pathsToExplore : [PathToExplore] = []
+    var solutionFound : [Bit]? = nil
     
-    // Looking for invalidNodes to use as paths to explore at current depth
-    var pathsToExplore = inputPathsToExplore
-    if let invalidNodesAtCurrentDepth = invalidNodesByDepth[currentDepth] {
-        pathsToExplore.append(contentsOf: invalidNodesAtCurrentDepth.map{
-            invalidNode in
-            PathToExplore(path: invalidNode.path
-                          , previousPath: nil
-                          , rootNode: rootNode
-                          , node1: invalidNode
-                          , node2: rootNode)
-        })
-    }
-    
-    // Special case if current paths to explore is empty :
-    // either we have some more invalid nodes waiting at deeper depth
-    // , either we don't and we must stop now with no solutions
-    if pathsToExplore.isEmpty {
-        let nextDepthToSearch = invalidNodesByDepth
-            .keys
-            .filter{ $0 > currentDepth }
-            .min()
+    while solutionFound == nil {
+        // Looking for invalidNodes to use as paths to explore at current depth
+        if let invalidNodesAtCurrentDepth = invalidNodesByDepth[currentDepth] {
+            pathsToExplore.append(contentsOf: invalidNodesAtCurrentDepth.map{
+                invalidNode in
+                PathToExplore(path: invalidNode.path
+                              , previousPath: nil
+                              , rootNode: rootNode
+                              , node1: invalidNode
+                              , node2: rootNode)
+            })
+        }
         
-        if let nextDepthToSearch = nextDepthToSearch {
-            return parallelSearch(currentDepth: nextDepthToSearch
-                                  , pathsToExplore: []
-                                  , invalidNodesByDepth: invalidNodesByDepth
-                                  , rootNode: rootNode)
+        // Special case if current paths to explore is empty :
+        // either we have some more invalid nodes waiting at deeper depth
+        // , either we don't and we must stop now with no solutions
+        if pathsToExplore.isEmpty {
+            let nextDepthToSearch = invalidNodesByDepth
+                .keys
+                .filter{ $0 > currentDepth }
+                .min()
+            
+            if let nextDepthToSearch = nextDepthToSearch {
+                currentDepth = nextDepthToSearch
+                pathsToExplore = []
+            } else {
+                break
+            }
         } else {
-            return nil
+            
+            // Looking for every path to explore now, finding a solution or preparing the job for the next depth
+            var nextDepthPathsToExplore = [PathToExplore]()
+            
+            for pathToExplore in pathsToExplore {
+                if pathToExplore.solutionFound {
+                    solutionFound = pathToExplore.path
+                    break
+                } else {
+                    nextDepthPathsToExplore.append(contentsOf: pathToExplore.getNextPathsToExplore())
+                }
+            }
+            
+            currentDepth += 1
+            pathsToExplore = nextDepthPathsToExplore
         }
     }
     
-    // Looking for every path to explore now, finding a solution or preparing the job for the next depth
-    var nextDepthPathsToExplore = [PathToExplore]()
-    
-    for pathToExplore in pathsToExplore {
-        if pathToExplore.solutionFound {
-            return pathToExplore.path
-        } else {
-            nextDepthPathsToExplore.append(contentsOf: pathToExplore.getNextPathsToExplore())
-        }
-    }
-    
-    return parallelSearch(currentDepth: currentDepth + 1
-                          , pathsToExplore: nextDepthPathsToExplore
-                          , invalidNodesByDepth: invalidNodesByDepth
-                          , rootNode: rootNode)
+    return solutionFound
 }
+
 
 func crashDecode(codes input: [String]) -> String? {
     // Write your code here
@@ -238,14 +232,13 @@ func crashDecode(codes input: [String]) -> String? {
     
     let rootNode = constructBinaryTree(codes: codes, path: [], invalidNodesByDepth: &invalidNodesByDepth)!
 
-    var firstFoundWord : [Bit]? = nil
+    var solutionFound : [Bit]? = nil
+    
     if let startingSearchDepth = invalidNodesByDepth.keys.min() {
-        firstFoundWord = parallelSearch(currentDepth: startingSearchDepth
-                                        , pathsToExplore: []
-                                        , invalidNodesByDepth: invalidNodesByDepth
-                                        , rootNode: rootNode)
+        solutionFound = parallelSearch(invalidNodesByDepth: invalidNodesByDepth
+                                       , rootNode: rootNode)
     }
 
-    return firstFoundWord?.map{ $0 ? "1" : "0"}.joined() ?? "X"
+    return solutionFound?.map{ $0 ? "1" : "0"}.joined() ?? "X"
 }
 
