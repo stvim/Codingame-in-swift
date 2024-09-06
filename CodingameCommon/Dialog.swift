@@ -51,10 +51,14 @@ public struct Dialog {
 }
 
 public func readLine() -> String? {
-    return readLine("")
+    return readLine(nil)
 }
-public func readLine(_ message:String) -> String? {
-    print(message, ": ", terminator : "")
+public func readLine(_ message:String?) -> String? {
+    if let message {
+        print(" >  > \(message) > ", terminator : "")
+    } else {
+        print(" > ", terminator : "")
+    }
     var r : String?
     if case .Scenario(let gameData) = Dialog.mode {
         r = gameData.readLineOfInputData()
