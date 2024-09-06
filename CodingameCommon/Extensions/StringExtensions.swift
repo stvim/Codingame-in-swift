@@ -35,3 +35,16 @@ extension String {
         return String(self[start ..< end])
     }
 }
+
+
+extension String {
+    func padded(toLength length: Int) -> String {
+        let currentLength = self.count
+        if currentLength < length {
+            let padding = String(repeating: " ", count: length - currentLength)
+            return self + padding
+        } else {
+            return self // If the string is already longer, return as is
+        }
+    }
+}
