@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B008774A2C8AF8FB00231E12 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00877492C8AF8FB00231E12 /* StringExtensions.swift */; };
+		B00877582C8AFD1B00231E12 /* CodingameTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00877502C8AFD1B00231E12 /* CodingameTemplate.framework */; };
+		B008775D2C8AFD1B00231E12 /* Exercice1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008775C2C8AFD1B00231E12 /* Exercice1Tests.swift */; };
+		B00877662C8AFD4500231E12 /* Exercice1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00877652C8AFD4500231E12 /* Exercice1.swift */; };
+		B00877682C8AFDA500231E12 /* Exercice1Data01 in Resources */ = {isa = PBXBuildFile; fileRef = B00877672C8AFDA500231E12 /* Exercice1Data01 */; };
+		B00877692C8AFE5800231E12 /* CodingameCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AE045129CDC464001136B1 /* CodingameCommon.framework */; };
+		B008776A2C8AFE5800231E12 /* CodingameCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0AE045129CDC464001136B1 /* CodingameCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B00877742C8AFF0A00231E12 /* HowTo.docc in Sources */ = {isa = PBXBuildFile; fileRef = B00877732C8AFF0A00231E12 /* HowTo.docc */; };
+		B00877832C8B11EA00231E12 /* Enigma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B008777B2C8B11EA00231E12 /* Enigma.framework */; };
+		B00877892C8B11EA00231E12 /* Enigma.h in Headers */ = {isa = PBXBuildFile; fileRef = B008777D2C8B11EA00231E12 /* Enigma.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B00877902C8B120100231E12 /* CodingameCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AE045129CDC464001136B1 /* CodingameCommon.framework */; };
+		B00877912C8B120200231E12 /* CodingameCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0AE045129CDC464001136B1 /* CodingameCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B00877992C8B157800231E12 /* EnigmaPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00877972C8B152200231E12 /* EnigmaPuzzle.swift */; };
+		B008779C2C8B2ABA00231E12 /* EnigmaPuzzleData01 in Resources */ = {isa = PBXBuildFile; fileRef = B00877952C8B150700231E12 /* EnigmaPuzzleData01 */; };
+		B008779D2C8B2AD700231E12 /* EnigmaPuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008779A2C8B29A200231E12 /* EnigmaPuzzleTests.swift */; };
+		B00877A02C8B324300231E12 /* EnigmaPuzzleData02 in Resources */ = {isa = PBXBuildFile; fileRef = B008779E2C8B31A600231E12 /* EnigmaPuzzleData02 */; };
+		B00877A22C8B3AEB00231E12 /* EnigmaPuzzleData03 in Resources */ = {isa = PBXBuildFile; fileRef = B00877A12C8B3AEB00231E12 /* EnigmaPuzzleData03 */; };
 		B023472029D4239F00BE94DC /* The_Resistance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B023471829D4239F00BE94DC /* The_Resistance.framework */; };
 		B023472529D4239F00BE94DC /* The_ResistanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023472429D4239F00BE94DC /* The_ResistanceTests.swift */; };
 		B023472629D4239F00BE94DC /* The_Resistance.h in Headers */ = {isa = PBXBuildFile; fileRef = B023471A29D4239F00BE94DC /* The_Resistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -91,6 +107,34 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
+		B00877592C8AFD1B00231E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B008774F2C8AFD1B00231E12;
+			remoteInfo = CodingameTemplate;
+		};
+		B008776B2C8AFE5900231E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0AE044529CDC464001136B1;
+			remoteInfo = CodingameCommon;
+		};
+		B00877842C8B11EA00231E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B008777A2C8B11EA00231E12;
+			remoteInfo = Enigma;
+		};
+		B00877922C8B120200231E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0AE044529CDC464001136B1;
+			remoteInfo = CodingameCommon;
+		};
 		B023472129D4239F00BE94DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
@@ -199,6 +243,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B008776D2C8AFE5900231E12 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B008776A2C8AFE5800231E12 /* CodingameCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877942C8B120200231E12 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B00877912C8B120200231E12 /* CodingameCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B04D09582C0A058E002AB763 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +298,20 @@
 
 /* Begin PBXFileReference section */
 		B00877492C8AF8FB00231E12 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		B00877502C8AFD1B00231E12 /* CodingameTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CodingameTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00877572C8AFD1B00231E12 /* CodingameTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingameTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B008775C2C8AFD1B00231E12 /* Exercice1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercice1Tests.swift; sourceTree = "<group>"; };
+		B00877652C8AFD4500231E12 /* Exercice1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercice1.swift; sourceTree = "<group>"; };
+		B00877672C8AFDA500231E12 /* Exercice1Data01 */ = {isa = PBXFileReference; lastKnownFileType = text; path = Exercice1Data01; sourceTree = "<group>"; };
+		B00877732C8AFF0A00231E12 /* HowTo.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HowTo.docc; sourceTree = "<group>"; };
+		B008777B2C8B11EA00231E12 /* Enigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Enigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B008777D2C8B11EA00231E12 /* Enigma.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enigma.h; sourceTree = "<group>"; };
+		B00877822C8B11EA00231E12 /* EnigmaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnigmaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00877952C8B150700231E12 /* EnigmaPuzzleData01 */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnigmaPuzzleData01; sourceTree = "<group>"; };
+		B00877972C8B152200231E12 /* EnigmaPuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaPuzzle.swift; sourceTree = "<group>"; };
+		B008779A2C8B29A200231E12 /* EnigmaPuzzleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaPuzzleTests.swift; sourceTree = "<group>"; };
+		B008779E2C8B31A600231E12 /* EnigmaPuzzleData02 */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnigmaPuzzleData02; sourceTree = "<group>"; };
+		B00877A12C8B3AEB00231E12 /* EnigmaPuzzleData03 */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnigmaPuzzleData03; sourceTree = "<group>"; };
 		B023470F29D38B1A00BE94DC /* ChallengeWinter2023.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeWinter2023.swift; sourceTree = "<group>"; };
 		B023471029D38BCA00BE94DC /* BotBattle December 2023.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BotBattle December 2023.swift"; sourceTree = "<group>"; };
 		B023471829D4239F00BE94DC /* The_Resistance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = The_Resistance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,6 +398,38 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B008774D2C8AFD1B00231E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877692C8AFE5800231E12 /* CodingameCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877542C8AFD1B00231E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877582C8AFD1B00231E12 /* CodingameTemplate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877782C8B11EA00231E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877902C8B120100231E12 /* CodingameCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B008777F2C8B11EA00231E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877832C8B11EA00231E12 /* Enigma.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B023471529D4239E00BE94DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +573,53 @@
 				B00877492C8AF8FB00231E12 /* StringExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B00877512C8AFD1B00231E12 /* CodingameTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				B00877652C8AFD4500231E12 /* Exercice1.swift */,
+				B00877732C8AFF0A00231E12 /* HowTo.docc */,
+			);
+			path = CodingameTemplate;
+			sourceTree = "<group>";
+		};
+		B008775B2C8AFD1B00231E12 /* CodingameTemplateTests */ = {
+			isa = PBXGroup;
+			children = (
+				B008775C2C8AFD1B00231E12 /* Exercice1Tests.swift */,
+				B00877672C8AFDA500231E12 /* Exercice1Data01 */,
+			);
+			path = CodingameTemplateTests;
+			sourceTree = "<group>";
+		};
+		B00877752C8B0FD900231E12 /* Puzzle Easy */ = {
+			isa = PBXGroup;
+			children = (
+				B008777C2C8B11EA00231E12 /* Enigma */,
+				B00877862C8B11EA00231E12 /* EnigmaTests */,
+			);
+			path = "Puzzle Easy";
+			sourceTree = "<group>";
+		};
+		B008777C2C8B11EA00231E12 /* Enigma */ = {
+			isa = PBXGroup;
+			children = (
+				B008777D2C8B11EA00231E12 /* Enigma.h */,
+				B00877972C8B152200231E12 /* EnigmaPuzzle.swift */,
+			);
+			path = Enigma;
+			sourceTree = "<group>";
+		};
+		B00877862C8B11EA00231E12 /* EnigmaTests */ = {
+			isa = PBXGroup;
+			children = (
+				B00877952C8B150700231E12 /* EnigmaPuzzleData01 */,
+				B008779E2C8B31A600231E12 /* EnigmaPuzzleData02 */,
+				B008779A2C8B29A200231E12 /* EnigmaPuzzleTests.swift */,
+				B00877A12C8B3AEB00231E12 /* EnigmaPuzzleData03 */,
+			);
+			path = EnigmaTests;
 			sourceTree = "<group>";
 		};
 		B023471229D4235100BE94DC /* Puzzle Very Hard */ = {
@@ -684,6 +843,7 @@
 		B0B12F1729C3167000F807CF = {
 			isa = PBXGroup;
 			children = (
+				B00877752C8B0FD900231E12 /* Puzzle Easy */,
 				B04D094E2C0A03B0002AB763 /* Exams */,
 				B05D4DB72BB433500098E380 /* Challenges */,
 				B027E22129DB58330066E752 /* BotBattles */,
@@ -694,6 +854,8 @@
 				B0AE03C829C9C87B001136B1 /* CodingameCommonTests */,
 				B0AE03DB29C9D96C001136B1 /* Foobar */,
 				B027E22D29DC2B740066E752 /* Other */,
+				B00877512C8AFD1B00231E12 /* CodingameTemplate */,
+				B008775B2C8AFD1B00231E12 /* CodingameTemplateTests */,
 				B0B12F2129C3167100F807CF /* Products */,
 				B04D09532C0A058E002AB763 /* Frameworks */,
 			);
@@ -720,6 +882,10 @@
 				B05D4DC52BB4340C0098E380 /* Challenge2024SpringTests.xctest */,
 				B04D09392C0A039F002AB763 /* SwiftCertification.framework */,
 				B04D09402C0A039F002AB763 /* SwiftCertificationTests.xctest */,
+				B00877502C8AFD1B00231E12 /* CodingameTemplate.framework */,
+				B00877572C8AFD1B00231E12 /* CodingameTemplateTests.xctest */,
+				B008777B2C8B11EA00231E12 /* Enigma.framework */,
+				B00877822C8B11EA00231E12 /* EnigmaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -756,6 +922,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		B008774B2C8AFD1B00231E12 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877762C8B11EA00231E12 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877892C8B11EA00231E12 /* Enigma.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B023471329D4239E00BE94DC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -822,6 +1003,82 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B008774F2C8AFD1B00231E12 /* CodingameTemplate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B008775F2C8AFD1B00231E12 /* Build configuration list for PBXNativeTarget "CodingameTemplate" */;
+			buildPhases = (
+				B008774B2C8AFD1B00231E12 /* Headers */,
+				B008774C2C8AFD1B00231E12 /* Sources */,
+				B008774D2C8AFD1B00231E12 /* Frameworks */,
+				B008774E2C8AFD1B00231E12 /* Resources */,
+				B008776D2C8AFE5900231E12 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B008776C2C8AFE5900231E12 /* PBXTargetDependency */,
+			);
+			name = CodingameTemplate;
+			productName = CodingameTemplate;
+			productReference = B00877502C8AFD1B00231E12 /* CodingameTemplate.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B00877562C8AFD1B00231E12 /* CodingameTemplateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B00877622C8AFD1B00231E12 /* Build configuration list for PBXNativeTarget "CodingameTemplateTests" */;
+			buildPhases = (
+				B00877532C8AFD1B00231E12 /* Sources */,
+				B00877542C8AFD1B00231E12 /* Frameworks */,
+				B00877552C8AFD1B00231E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B008775A2C8AFD1B00231E12 /* PBXTargetDependency */,
+			);
+			name = CodingameTemplateTests;
+			productName = CodingameTemplateTests;
+			productReference = B00877572C8AFD1B00231E12 /* CodingameTemplateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B008777A2C8B11EA00231E12 /* Enigma */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B008778A2C8B11EA00231E12 /* Build configuration list for PBXNativeTarget "Enigma" */;
+			buildPhases = (
+				B00877762C8B11EA00231E12 /* Headers */,
+				B00877772C8B11EA00231E12 /* Sources */,
+				B00877782C8B11EA00231E12 /* Frameworks */,
+				B00877792C8B11EA00231E12 /* Resources */,
+				B00877942C8B120200231E12 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B00877932C8B120200231E12 /* PBXTargetDependency */,
+			);
+			name = Enigma;
+			productName = Enigma;
+			productReference = B008777B2C8B11EA00231E12 /* Enigma.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B00877812C8B11EA00231E12 /* EnigmaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B008778D2C8B11EA00231E12 /* Build configuration list for PBXNativeTarget "EnigmaTests" */;
+			buildPhases = (
+				B008777E2C8B11EA00231E12 /* Sources */,
+				B008777F2C8B11EA00231E12 /* Frameworks */,
+				B00877802C8B11EA00231E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B00877852C8B11EA00231E12 /* PBXTargetDependency */,
+			);
+			name = EnigmaTests;
+			productName = EnigmaTests;
+			productReference = B00877822C8B11EA00231E12 /* EnigmaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B023471729D4239E00BE94DC /* The Resistance */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B023472729D4239F00BE94DC /* Build configuration list for PBXNativeTarget "The Resistance" */;
@@ -1164,8 +1421,21 @@
 					New,
 				);
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					B008774F2C8AFD1B00231E12 = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+					};
+					B00877562C8AFD1B00231E12 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					B008777A2C8B11EA00231E12 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					B00877812C8B11EA00231E12 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					B023471729D4239E00BE94DC = {
 						CreatedOnToolsVersion = 14.2;
 						LastSwiftMigration = 1420;
@@ -1256,11 +1526,47 @@
 				B05D4DC42BB4340C0098E380 /* Challenge2024SpringTests */,
 				B04D09382C0A039F002AB763 /* SwiftCertification */,
 				B04D093F2C0A039F002AB763 /* SwiftCertificationTests */,
+				B008774F2C8AFD1B00231E12 /* CodingameTemplate */,
+				B00877562C8AFD1B00231E12 /* CodingameTemplateTests */,
+				B008777A2C8B11EA00231E12 /* Enigma */,
+				B00877812C8B11EA00231E12 /* EnigmaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B008774E2C8AFD1B00231E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877552C8AFD1B00231E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877682C8AFDA500231E12 /* Exercice1Data01 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877792C8B11EA00231E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877802C8B11EA00231E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877A22C8B3AEB00231E12 /* EnigmaPuzzleData03 in Resources */,
+				B008779C2C8B2ABA00231E12 /* EnigmaPuzzleData01 in Resources */,
+				B00877A02C8B324300231E12 /* EnigmaPuzzleData02 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B023471629D4239E00BE94DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1404,6 +1710,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B008774C2C8AFD1B00231E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877742C8AFF0A00231E12 /* HowTo.docc in Sources */,
+				B00877662C8AFD4500231E12 /* Exercice1.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877532C8AFD1B00231E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B008775D2C8AFD1B00231E12 /* Exercice1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00877772C8B11EA00231E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00877992C8B157800231E12 /* EnigmaPuzzle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B008777E2C8B11EA00231E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B008779D2C8B2AD700231E12 /* EnigmaPuzzleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B023471429D4239E00BE94DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1556,6 +1895,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B008775A2C8AFD1B00231E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B008774F2C8AFD1B00231E12 /* CodingameTemplate */;
+			targetProxy = B00877592C8AFD1B00231E12 /* PBXContainerItemProxy */;
+		};
+		B008776C2C8AFE5900231E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0AE044529CDC464001136B1 /* CodingameCommon */;
+			targetProxy = B008776B2C8AFE5900231E12 /* PBXContainerItemProxy */;
+		};
+		B00877852C8B11EA00231E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B008777A2C8B11EA00231E12 /* Enigma */;
+			targetProxy = B00877842C8B11EA00231E12 /* PBXContainerItemProxy */;
+		};
+		B00877932C8B120200231E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0AE044529CDC464001136B1 /* CodingameCommon */;
+			targetProxy = B00877922C8B120200231E12 /* PBXContainerItemProxy */;
+		};
 		B023472229D4239F00BE94DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B023471729D4239E00BE94DC /* The Resistance */;
@@ -1634,6 +1993,255 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		B00877602C8AFD1B00231E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = "mousquetaire-softwares.CodingameTemplate";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B00877612C8AFD1B00231E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = "mousquetaire-softwares.CodingameTemplate";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B00877632C8AFD1B00231E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mousquetaire-softwares.CodingameTemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B00877642C8AFD1B00231E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mousquetaire-softwares.CodingameTemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B008778B2C8B11EA00231E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.Enigma;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B008778C2C8B11EA00231E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.Enigma;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B008778E2C8B11EA00231E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.EnigmaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B008778F2C8B11EA00231E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.EnigmaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		B023472829D4239F00BE94DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1641,10 +2249,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1654,6 +2264,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "stvim.The-Resistance";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1672,10 +2283,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1685,6 +2298,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "stvim.The-Resistance";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1701,6 +2315,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "stvim.The-ResistanceTests";
@@ -1716,6 +2331,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "stvim.The-ResistanceTests";
@@ -1732,10 +2348,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1745,6 +2363,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.CodeVsZombies;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1763,10 +2382,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1776,6 +2397,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.CodeVsZombies;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1792,6 +2414,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.CodeVsZombiesTests;
@@ -1807,6 +2430,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.CodeVsZombiesTests;
@@ -1823,10 +2447,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1836,6 +2462,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.MapPodRacing;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1854,10 +2481,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1867,6 +2496,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.MapPodRacing;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1883,6 +2513,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.MapPodRacingTests;
@@ -1898,6 +2529,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.MapPodRacingTests;
@@ -1913,10 +2545,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1926,6 +2560,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.Other;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1942,10 +2577,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1955,6 +2592,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.Other;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1971,6 +2609,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.OtherTests;
@@ -1986,6 +2625,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.OtherTests;
@@ -2001,9 +2641,11 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2044,9 +2686,11 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2086,6 +2730,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -2108,6 +2753,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -2126,14 +2772,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2144,6 +2793,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.7;
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.Challenge2024Spring;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -2159,14 +2809,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2177,6 +2830,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.7;
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.Challenge2024Spring;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -2193,6 +2847,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.7;
@@ -2210,6 +2865,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.7;
@@ -2227,6 +2883,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.CodingameCommonTests;
@@ -2242,6 +2899,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.CodingameCommonTests;
@@ -2255,6 +2913,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2264,6 +2923,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2275,10 +2935,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2288,6 +2950,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.DeathFirstSearch;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -2304,10 +2967,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2317,6 +2982,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.DeathFirstSearch;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -2333,6 +2999,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.DeathFirstSearchTests;
@@ -2348,6 +3015,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.DeathFirstSearchTests;
@@ -2364,10 +3032,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2377,6 +3047,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.CodingameCommon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2394,10 +3065,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2407,6 +3080,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = stvim.CodingameCommon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2450,6 +3124,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2510,6 +3185,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2535,6 +3211,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2551,6 +3228,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2564,6 +3242,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B008775F2C8AFD1B00231E12 /* Build configuration list for PBXNativeTarget "CodingameTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00877602C8AFD1B00231E12 /* Debug */,
+				B00877612C8AFD1B00231E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B00877622C8AFD1B00231E12 /* Build configuration list for PBXNativeTarget "CodingameTemplateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00877632C8AFD1B00231E12 /* Debug */,
+				B00877642C8AFD1B00231E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B008778A2C8B11EA00231E12 /* Build configuration list for PBXNativeTarget "Enigma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B008778B2C8B11EA00231E12 /* Debug */,
+				B008778C2C8B11EA00231E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B008778D2C8B11EA00231E12 /* Build configuration list for PBXNativeTarget "EnigmaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B008778E2C8B11EA00231E12 /* Debug */,
+				B008778F2C8B11EA00231E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B023472729D4239F00BE94DC /* Build configuration list for PBXNativeTarget "The Resistance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

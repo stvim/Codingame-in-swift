@@ -6,10 +6,12 @@
 //
 
 import XCTest
+import CodingameCommon
 @testable import CodingameTemplate
 
 final class Exercice1Tests: XCTestCase {
-
+    let dataFilenames = ["", "Exercice1Data01"]
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -18,12 +20,10 @@ final class Exercice1Tests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testScenario() throws {
-        let fileName = "Certification01Data01"
-        
+    func testData01() throws {
 
         let bundle = Bundle(for: Exercice1Tests.self)
-        let fileUrl = bundle.url(forResource: fileName, withExtension: "txt")!
+        let fileUrl = bundle.url(forResource: dataFilenames[1], withExtension: "")!
         
         Dialog.mode = DialogMode.Scenario(gameData: GameData(inputDataFile: fileUrl))
         main()
