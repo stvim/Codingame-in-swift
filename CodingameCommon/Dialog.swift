@@ -64,7 +64,7 @@ public func readLine(_ message:String?) -> String? {
         r = gameData.readLineOfInputData()
     }
     else { // Interactive mode
-        r = readLine()
+        r = Swift.readLine()
     }
     
     if let ur = r, ur == "" {
