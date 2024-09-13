@@ -28,9 +28,10 @@ import CodingameCommon
 import Foundation
 
 internal func main() -> Void {
-    let bundle = Bundle(for: DeathFirstSearchTests.self)
-    let fileUrl = bundle.url(forResource: fileName, withExtension: "txt")!
-    Dialog.mode = DialogMode.Scenario(gameData: GameData(inputDataFile: <#T##URL#>))
+//    let bundle = Bundle(for: DeathFirstSearchTests.self)
+//    let fileUrl = bundle.url(forResource: fileName, withExtension: "txt")!
+//    Dialog.mode = DialogMode.Scenario(gameData: GameData(inputDataFile: <#T##URL#>))
+    Dialog.mode = DialogMode.Interactive
     var greeting = "Hello, playground"
     greeting = readLine("Please tell me")!
     debug("yes it s working")
