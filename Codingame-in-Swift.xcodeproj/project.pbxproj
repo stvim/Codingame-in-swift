@@ -42,7 +42,6 @@
 		B027E24329DC2B8F0066E752 /* TempPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B027E22629DC2A410066E752 /* TempPlay.swift */; };
 		B027E24729DC4EF80066E752 /* TempPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B027E23829DC2B750066E752 /* TempPlayTests.swift */; };
 		B027E24A29DC7C8F0066E752 /* Certification01Data01.txt in Resources */ = {isa = PBXBuildFile; fileRef = B027E24829DC4F450066E752 /* Certification01Data01.txt */; };
-		B029B17929CF271C0007C69A /* Tests Explore Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE042929CCBA51001136B1 /* Tests Explore Bundle.swift */; };
 		B04D09412C0A039F002AB763 /* SwiftCertification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04D09392C0A039F002AB763 /* SwiftCertification.framework */; };
 		B04D09462C0A039F002AB763 /* Certification01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04D09452C0A039F002AB763 /* Certification01Tests.swift */; };
 		B04D09472C0A039F002AB763 /* SwiftCertification.h in Headers */ = {isa = PBXBuildFile; fileRef = B04D093B2C0A039F002AB763 /* SwiftCertification.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -367,7 +366,6 @@
 		B0AE040A29CCAD8C001136B1 /* DeathFirstSearch.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DeathFirstSearch.docc; sourceTree = "<group>"; };
 		B0AE041029CCAD8C001136B1 /* DeathFirstSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeathFirstSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AE041529CCAD8D001136B1 /* DeathFirstSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathFirstSearchTests.swift; sourceTree = "<group>"; };
-		B0AE042929CCBA51001136B1 /* Tests Explore Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tests Explore Bundle.swift"; path = "Foobar/Tests Explore Bundle.swift"; sourceTree = SOURCE_ROOT; };
 		B0AE043E29CDB0E5001136B1 /* DeathFirstSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathFirstSearch.swift; sourceTree = "<group>"; };
 		B0AE044229CDB44B001136B1 /* DeathFirstSearch test wrong directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeathFirstSearch test wrong directory.swift"; path = "DeathFirstSearch/DeathFirstSearch test wrong directory.swift"; sourceTree = SOURCE_ROOT; };
 		B0AE045129CDC464001136B1 /* CodingameCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CodingameCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -812,7 +810,6 @@
 		B0AE03DB29C9D96C001136B1 /* Foobar */ = {
 			isa = PBXGroup;
 			children = (
-				B0AE042929CCBA51001136B1 /* Tests Explore Bundle.swift */,
 				B0AE03DC29C9D96C001136B1 /* main.swift */,
 			);
 			path = Foobar;
@@ -1854,7 +1851,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0AE03DD29C9D96C001136B1 /* main.swift in Sources */,
-				B029B17929CF271C0007C69A /* Tests Explore Bundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
