@@ -38,7 +38,16 @@ When copying your solution from Xcode to the Codingame platform, all you need to
 
 ## Usage
 
+### New target creation (for a new puzzle or challenge)
+
+Create a new target as a **CommandLine Tool** if you must use the interactive mode (see below).
+Follow the HowTo documentation in the CodingameTemplate group to get a working new environment for your target.
+
+### New file creation (for an exercice or a specific solution)
+
 **Import the Framework**: Include the `CodingameCommon` target in any Codingame puzzle target.
+Actually, the easiest way is to copy and paste all the HEADER block from the CodingameTemplate/Exercice1 file (see above).
+
 **Use Input Files Data (scenarios) or Interactive mode to test your code**: 
 - You can specify input files to simulate various test cases instead of manual input, enhancing the ability to test and debug complex problems, and run many tests at once.
 - Or the framework provides utilities to run your solution interactively from the command line, mimicking the Codingame environment for on-the-fly testing/debugging.
