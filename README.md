@@ -12,7 +12,7 @@ This repository is organized into multiple targets, each representing a unique s
 - Swift as the main programming language.
 - Solutions organized by category and difficulty.
 
-## CodingameCommon: A Supporting Mini Framework
+### CodingameCommon: A Supporting Mini Framework
 
 The **CodingameCommon** target is a mini-framework designed to assist in the development of solutions for Codingame puzzles. It provides several helpful utilities that streamline input/output handling, testing, and debugging during development.
 
@@ -29,28 +29,28 @@ This header ensures that the code remains interoperable between the Xcode enviro
 
 When copying your solution from Xcode to the Codingame platform, all you need to do is uncomment the main() execution line at the bottom of the file to make it work seamlessly in the Codingame web interface.
 
-### Prerequisites
+## Prerequisites
 
 - macOS with [Xcode](https://developer.apple.com/xcode/) installed.
 - Basic knowledge of Swift programming and the Xcode environment.
 - An active account on [Codingame](https://www.codingame.com) to test and submit solutions.
 
 
-### Usage:
+## Usage
 
 **Import the Framework**: Include the `CodingameCommon` target in any Codingame puzzle target.
 **Use Input Files Data (scenarios) or Interactive mode to test your code**: 
 - You can specify input files to simulate various test cases instead of manual input, enhancing the ability to test and debug complex problems, and run many tests at once.
 - Or the framework provides utilities to run your solution interactively from the command line, mimicking the Codingame environment for on-the-fly testing/debugging.
 
-## Interactive Mode
+### Interactive Mode
 The framework provides utilities to run your solution interactively from the command line, mimicking the Codingame environment for easier debugging.
 - Create a new target as a **CommandLine Tool**
 - Insert "Dialog.mode = .Interactive" in the firsts lines of your main() function
 - Uncomment main() on the last line
 - Run the target/scheme in Debug mode (Xcode)
 
-## Scenario Mode
+### Scenario Mode
 - Create a new target with UnitTests
 - Create unit tests following the CodingameTemplateTests example. Create a text file for inputs and write a testing function as follows :
 
@@ -65,3 +65,21 @@ The framework provides utilities to run your solution interactively from the com
       }
 - Run the target/scheme in Test mode (Xcode) 
 
+
+## Contributing
+
+Contributions are welcome! Feel free to submit pull requests for new puzzles or improvements to existing solutions. Please follow the guidelines below when contributing:
+
+- Fork the repository.
+- Create a new branch (feature-new-puzzle).
+- Commit your changes.
+- Push your branch and submit a pull request.
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+For any questions or suggestions, feel free to reach out via GitHub issues.
