@@ -8,7 +8,7 @@ How to use this template to create a new codingame subproject to work on a new c
 
 ### Actions to prepare a new working place
 
-- In Project, create a new Target named XXX
+- In Project, create a new Target named XXX, and *Include XCTests*
 - In its properties, add the framework CodingameCommon in the 'framework and libraries'
 - Move the 2 groups XXX and XXXTests into an appropriate parent Group
 - In XXX group, create a swift code file named exerciceAAA

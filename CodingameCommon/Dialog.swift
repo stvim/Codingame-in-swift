@@ -4,18 +4,36 @@ extension FileHandle: TextOutputStream {
 }
 public var errStream = FileHandle.standardError
 
-public var defaultTerminator : String = "\n"
-public var defaultSeparator : String = " "
+extension String {
+    public static let eol = "\n"
+    public static let empty = ""
+    public static let defaultTerminator = eol
+    public static let defaultSeparator = " "
+}
 
-public func print(_ args:Any..., separator:String = defaultSeparator, terminator:String = defaultTerminator) -> Void {
-    let output = args.map{"\($0)"}.joined(separator: separator)
+extension Array {
+    public func joinedStrings(separator: String) -> String {
+        return self.map{"\($0)"}.joined(separator: separator)
+    }
+}
+
+public func print(_ args:Any..., separator:String = .defaultSeparator, terminator:String = .defaultTerminator) -> Void {
+    let output = args.joinedStrings(separator: separator)
+
+    Dialog.allOutputs.append(output)
     Swift.print(output,terminator: terminator)
 }
 
 
-public func debug(_ args:Any..., separator:String = defaultSeparator, terminator:String = defaultTerminator) {
-    let output = args.map{"\($0)"}.joined(separator: separator)
+public func debug(_ args:Any..., separator:String = .defaultSeparator, terminator:String = .defaultTerminator) {
+    let output = args.joinedStrings(separator: separator)
     Swift.print("***",output, terminator: terminator, to: &errStream)
+    
+    if Dialog.verboseDebug {
+        Swift.print("-- all inputs ---", Dialog.allInputs.joined(separator: .eol), separator: .eol, to: &errStream)
+        Swift.print("-- all outputs --", Dialog.allOutputs.joined(separator: .eol), separator: .eol, to: &errStream)
+        Swift.print("-----------------", to: &errStream)
+    }
 }
 
 
@@ -26,7 +44,11 @@ public class GameData {
     
     public init(inputDataFile:URL) {
         let fileData = try! String(contentsOf: inputDataFile)
-        dataInputContent = fileData.split { $0.isNewline } .map( String.init )
+        dataInputContent = fileData.split(omittingEmptySubsequences: false, whereSeparator: { $0.isNewline }).map( String.init )
+    }
+    
+    public init(inputStrings:[String]) {
+        dataInputContent = inputStrings
     }
     
     public func readLineOfInputData() -> String? {
@@ -47,36 +69,34 @@ public enum DialogMode {
 }
 public struct Dialog {
     public static var allInputs : [String] = []
+    public static var allOutputs : [String] = []
     public static var mode : DialogMode = .Interactive
+    public static var verboseDebug = false
 }
 
 public func readLine() -> String? {
     return readLine(nil)
 }
 public func readLine(_ message:String?) -> String? {
+    let prompt : String
     if let message {
-        print(" >  > \(message) > ", terminator : "")
+        prompt = " > \(message) > "
     } else {
-        print(" > ", terminator : "")
-    }
-    var r : String?
-    if case .Scenario(let gameData) = Dialog.mode {
-        r = gameData.readLineOfInputData()
-    }
-    else { // Interactive mode
-        r = Swift.readLine()
+        prompt = " > "
     }
     
-    if let ur = r, ur == "" {
-        r = nil
+    Swift.print(prompt, terminator: .empty)
+    
+    var inputLine : String?
+    switch(Dialog.mode) {
+    case .Interactive:
+        inputLine = Swift.readLine()
+    case .Scenario(let gameData):
+        inputLine = gameData.readLineOfInputData()
+        Swift.print(inputLine ?? "\n\t---- end of scenario ----\n")
     }
     
-    if let r = r {
-        Dialog.allInputs.append(r)
-    }
+    Dialog.allInputs.append(prompt + (inputLine ?? "*nil*"))
     
-    if case .Scenario(_) = Dialog.mode {
-        print(r ?? "\n\t---- end of scenario ----\n")
-    }
-    return r
+    return inputLine
 }

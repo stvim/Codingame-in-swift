@@ -16,16 +16,17 @@ final class Exercice1Tests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        Dialog.verboseDebug = true
+        //debug("COMPLETE LOG", String(repeating: "*", count: 50))
     }
 
     func testData01() throws {
 
-        let bundle = Bundle(for: Exercice1Tests.self)
+        let bundle = Bundle(for: Self.self)
         let fileUrl = bundle.url(forResource: dataFilenames[1], withExtension: "")!
         
-        Dialog.mode = DialogMode.Scenario(gameData: GameData(inputDataFile: fileUrl))
+        Dialog.mode = .Scenario(gameData: GameData(inputDataFile: fileUrl))
         main()
     }
 
