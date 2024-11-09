@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -89,6 +89,9 @@
 		B0C2E0D32BB6AE84009FDAE3 /* Test_10_output.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0C2E0BD2BB6AE84009FDAE3 /* Test_10_output.txt */; };
 		B0C2E0D42BB6AE84009FDAE3 /* Test_3_input.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0C2E0BE2BB6AE84009FDAE3 /* Test_3_input.txt */; };
 		B0C2E0D52BB6AE84009FDAE3 /* Test_8_output.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0C2E0BF2BB6AE84009FDAE3 /* Test_8_output.txt */; };
+		B0CC10B12CDCF5D800BDCB11 /* CheatSolving.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CC10A92CDCF5D800BDCB11 /* CheatSolving.framework */; };
+		B0CC10BF2CDCF60E00BDCB11 /* CodingameCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AE045129CDC464001136B1 /* CodingameCommon.framework */; };
+		B0CC10C02CDCF60E00BDCB11 /* CodingameCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0AE045129CDC464001136B1 /* CodingameCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -239,6 +242,20 @@
 			remoteGlobalIDString = B0AE044529CDC464001136B1;
 			remoteInfo = CodingameCommon;
 		};
+		B0CC10B22CDCF5D800BDCB11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0CC10A82CDCF5D800BDCB11;
+			remoteInfo = CheatSolving;
+		};
+		B0CC10C12CDCF60E00BDCB11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0B12F1829C3167100F807CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0AE044529CDC464001136B1;
+			remoteInfo = CodingameCommon;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -292,6 +309,17 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B0CC10C32CDCF60E00BDCB11 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B0CC10C02CDCF60E00BDCB11 /* CodingameCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -393,7 +421,14 @@
 		B0C2E0BD2BB6AE84009FDAE3 /* Test_10_output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test_10_output.txt; sourceTree = "<group>"; };
 		B0C2E0BE2BB6AE84009FDAE3 /* Test_3_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test_3_input.txt; sourceTree = "<group>"; };
 		B0C2E0BF2BB6AE84009FDAE3 /* Test_8_output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test_8_output.txt; sourceTree = "<group>"; };
+		B0CC10A92CDCF5D800BDCB11 /* CheatSolving.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheatSolving.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0CC10B02CDCF5D800BDCB11 /* CheatSolvingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheatSolvingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B0CC10AA2CDCF5D800BDCB11 /* CheatSolving */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheatSolving; sourceTree = "<group>"; };
+		B0CC10B42CDCF5D800BDCB11 /* CheatSolvingTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheatSolvingTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B008774D2C8AFD1B00231E12 /* Frameworks */ = {
@@ -559,6 +594,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0CC10A62CDCF5D800BDCB11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0CC10BF2CDCF60E00BDCB11 /* CodingameCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0CC10AD2CDCF5D800BDCB11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0CC10B12CDCF5D800BDCB11 /* CheatSolving.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,6 +904,8 @@
 				B027E22D29DC2B740066E752 /* Other */,
 				B00877512C8AFD1B00231E12 /* CodingameTemplate */,
 				B008775B2C8AFD1B00231E12 /* CodingameTemplateTests */,
+				B0CC10AA2CDCF5D800BDCB11 /* CheatSolving */,
+				B0CC10B42CDCF5D800BDCB11 /* CheatSolvingTests */,
 				B0B12F2129C3167100F807CF /* Products */,
 				B04D09532C0A058E002AB763 /* Frameworks */,
 			);
@@ -883,6 +936,8 @@
 				B00877572C8AFD1B00231E12 /* CodingameTemplateTests.xctest */,
 				B008777B2C8B11EA00231E12 /* Enigma.framework */,
 				B00877822C8B11EA00231E12 /* EnigmaTests.xctest */,
+				B0CC10A92CDCF5D800BDCB11 /* CheatSolving.framework */,
+				B0CC10B02CDCF5D800BDCB11 /* CheatSolvingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -994,6 +1049,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0AE044729CDC464001136B1 /* CodingameCommon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0CC10A42CDCF5D800BDCB11 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,6 +1469,54 @@
 			productReference = B0B12F2029C3167100F807CF /* Codingame_ALL */;
 			productType = "com.apple.product-type.tool";
 		};
+		B0CC10A82CDCF5D800BDCB11 /* CheatSolving */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0CC10B92CDCF5D800BDCB11 /* Build configuration list for PBXNativeTarget "CheatSolving" */;
+			buildPhases = (
+				B0CC10A42CDCF5D800BDCB11 /* Headers */,
+				B0CC10A52CDCF5D800BDCB11 /* Sources */,
+				B0CC10A62CDCF5D800BDCB11 /* Frameworks */,
+				B0CC10A72CDCF5D800BDCB11 /* Resources */,
+				B0CC10C32CDCF60E00BDCB11 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0CC10C22CDCF60E00BDCB11 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B0CC10AA2CDCF5D800BDCB11 /* CheatSolving */,
+			);
+			name = CheatSolving;
+			packageProductDependencies = (
+			);
+			productName = CheatSolving;
+			productReference = B0CC10A92CDCF5D800BDCB11 /* CheatSolving.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B0CC10AF2CDCF5D800BDCB11 /* CheatSolvingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0CC10BC2CDCF5D800BDCB11 /* Build configuration list for PBXNativeTarget "CheatSolvingTests" */;
+			buildPhases = (
+				B0CC10AC2CDCF5D800BDCB11 /* Sources */,
+				B0CC10AD2CDCF5D800BDCB11 /* Frameworks */,
+				B0CC10AE2CDCF5D800BDCB11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0CC10B32CDCF5D800BDCB11 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B0CC10B42CDCF5D800BDCB11 /* CheatSolvingTests */,
+			);
+			name = CheatSolvingTests;
+			packageProductDependencies = (
+			);
+			productName = CheatSolvingTests;
+			productReference = B0CC10B02CDCF5D800BDCB11 /* CheatSolvingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1417,7 +1527,7 @@
 				KnownAssetTags = (
 					New,
 				);
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					B008774F2C8AFD1B00231E12 = {
@@ -1490,6 +1600,13 @@
 						CreatedOnToolsVersion = 14.2;
 						LastSwiftMigration = 1420;
 					};
+					B0CC10A82CDCF5D800BDCB11 = {
+						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
+					};
+					B0CC10AF2CDCF5D800BDCB11 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 				};
 			};
 			buildConfigurationList = B0B12F1B29C3167100F807CF /* Build configuration list for PBXProject "Codingame-in-Swift" */;
@@ -1527,6 +1644,8 @@
 				B00877562C8AFD1B00231E12 /* CodingameTemplateTests */,
 				B008777A2C8B11EA00231E12 /* Enigma */,
 				B00877812C8B11EA00231E12 /* EnigmaTests */,
+				B0CC10A82CDCF5D800BDCB11 /* CheatSolving */,
+				B0CC10AF2CDCF5D800BDCB11 /* CheatSolvingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1698,6 +1817,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B0AE044D29CDC464001136B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0CC10A72CDCF5D800BDCB11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0CC10AE2CDCF5D800BDCB11 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1888,6 +2021,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0CC10A52CDCF5D800BDCB11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0CC10AC2CDCF5D800BDCB11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1985,6 +2132,16 @@
 			isa = PBXTargetDependency;
 			target = B0AE044529CDC464001136B1 /* CodingameCommon */;
 			targetProxy = B0AE045D29CE5182001136B1 /* PBXContainerItemProxy */;
+		};
+		B0CC10B32CDCF5D800BDCB11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0CC10A82CDCF5D800BDCB11 /* CheatSolving */;
+			targetProxy = B0CC10B22CDCF5D800BDCB11 /* PBXContainerItemProxy */;
+		};
+		B0CC10C22CDCF60E00BDCB11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0AE044529CDC464001136B1 /* CodingameCommon */;
+			targetProxy = B0CC10C12CDCF60E00BDCB11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3235,6 +3392,131 @@
 			};
 			name = Release;
 		};
+		B0CC10BA2CDCF5D800BDCB11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.CheatSolving;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0CC10BB2CDCF5D800BDCB11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.CheatSolving;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B0CC10BD2CDCF5D800BDCB11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.CheatSolvingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B0CC10BE2CDCF5D800BDCB11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stvim.CheatSolvingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3441,6 +3723,24 @@
 			buildConfigurations = (
 				B0B12F2829C3167100F807CF /* Debug */,
 				B0B12F2929C3167100F807CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0CC10B92CDCF5D800BDCB11 /* Build configuration list for PBXNativeTarget "CheatSolving" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0CC10BA2CDCF5D800BDCB11 /* Debug */,
+				B0CC10BB2CDCF5D800BDCB11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0CC10BC2CDCF5D800BDCB11 /* Build configuration list for PBXNativeTarget "CheatSolvingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0CC10BD2CDCF5D800BDCB11 /* Debug */,
+				B0CC10BE2CDCF5D800BDCB11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
