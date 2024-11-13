@@ -75,8 +75,8 @@ func rectanglePartition () {
     
     let w = Int(inputs[0])!
     let h = Int(inputs[1])!
-    let countX = Int(inputs[2])!
-    let countY = Int(inputs[3])!
+    let _ = Int(inputs[2])!    // countX§
+    let _ = Int(inputs[3])!    // countY
     
     errStream.write("\(w) \(h)\n")
     
