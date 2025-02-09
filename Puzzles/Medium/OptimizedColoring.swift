@@ -63,47 +63,6 @@ import Foundation
 /**
  * Auto-generated code below aims at helping you parse
  * the standard input according to the problem statement.
-
-subAreaLinks [Set<Int>]
-subAreaAdjacents [Set<Int>]
-
-areaAdja
-pour chaque cellule
-    si voisin gauche ou haut
-        subAreaLinks[voisinGauche.subArea].insert(voisinHaut.subArea)
-        idem viceversa
-        cell.subArea = voinsinGauche ou Haut. subArea
-
-    si aucun voisin
-        subAreaLinks.append(Set()) && cell.subArea = subAreaLinks.count-1
-
-    si area adjactente gauche ou haut
-        subAreaAdjacent[cell.subArea].insert(cellAdjacentGauche.subArea)
-        subAreaAdjacent[cell.subArea].insert(cellAdjacentHaut.subArea)
-
-
-for subArea in subAreaLinks.indices
-    for link in subAreaLinks[subArea]
-        subAreaLinks[link].insert(contentsOf: subAreaLinks[subArea])
-
-areaAdjacents = [Set<Int>]
-uniqueAreaBySubArea = [Int]
-areasNum = 0
-for uniqueSubAreasGroup in <Set<Int>>(subAreaLinks)
-    for subAreaNum in uniqueSubAreasGroup
-        uniqueAreaBySubArea[subAreaNum] = areasNum
-    areasNum += 1
-
-for i in 0 ..< areasNum
-    var adjacentsAreas
-    for subArea in uniqueAreaBySubArea.enumerated().filter{ $0.value == i}.map{ $0.offset }
-        for adjacentSubArea in subAreaAdjacents[subArea]
-            if uniqueAreaBySubArea[adjacentSubArea] != i
-                areaAdjacent[i].insert( uniqueAreaBySubArea[adjacentSubArea]  )
-
-colorByArea = [Int?](repeating: nil, count: areasNum)
-for i in 0 ..< areasNum
-    let adjacentColors = Set(areaAdjacent[i].map{ colorByArea[$0] })
  **/
 
 typealias CellPos = (x:Int,y:Int)
